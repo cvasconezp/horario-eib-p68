@@ -688,15 +688,15 @@ function AdminLogin({ onBack, onLogin }) {
     <div className="container" style={{maxWidth:420,marginTop:60}}>
       <div className="card" style={{textAlign:"center"}}>
         <div style={{fontSize:40,marginBottom:12}}>🔒</div>
-        <h2 style={{fontSize:"18px",fontWeight:700,marginBottom:4}}>Panel de Administraci\u00f3n</h2>
+        <h2 style={{fontSize:"18px",fontWeight:700,marginBottom:4}}>Panel de Administración</h2>
         <p style={{fontSize:"13px",color:"#718096",marginBottom:20}}>Ingresa tus credenciales para acceder</p>
         <form onSubmit={handleLogin}>
           <input type="text" placeholder="Usuario" value={user} onChange={e => setUser(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:10,fontSize:14,fontFamily:"Inter,sans-serif"}} />
-          <input type="password" placeholder="Contrase\u00f1a" value={pass} onChange={e => setPass(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:16,fontSize:14,fontFamily:"Inter,sans-serif"}} />
-          {error && <div style={{color:"#e53e3e",fontSize:13,marginBottom:12}}>Usuario o contrase\u00f1a incorrectos</div>}
+          <input type="password" placeholder="Contraseña" value={pass} onChange={e => setPass(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:16,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+          {error && <div style={{color:"#e53e3e",fontSize:13,marginBottom:12}}>Usuario o contraseña incorrectos</div>}
           <button type="submit" style={{width:"100%",padding:"12px",background:"#2d3748",color:"white",border:"none",borderRadius:8,fontSize:14,fontWeight:600,cursor:"pointer",fontFamily:"Inter,sans-serif"}}>Ingresar</button>
         </form>
-        <button onClick={onBack} style={{marginTop:16,background:"none",border:"none",color:"#718096",fontSize:13,cursor:"pointer",fontFamily:"Inter,sans-serif"}}>\u2190 Volver a vista de estudiante</button>
+        <button onClick={onBack} style={{marginTop:16,background:"none",border:"none",color:"#718096",fontSize:13,cursor:"pointer",fontFamily:"Inter,sans-serif"}}>← Volver a vista de estudiante</button>
       </div>
     </div>
   );
@@ -731,7 +731,7 @@ function AdminPanel({ onBack }) {
   };
 
   const copiarTodosWhatsApp = () => {
-    const textos = filtered.map(r => textoWhatsApp(r)).join("\n\n\u2500\u2500\u2500\u2500\u2500\n\n");
+    const textos = filtered.map(r => textoWhatsApp(r)).join("\n\n─────\n\n");
     copiar(textos, "all");
   };
 
@@ -742,10 +742,10 @@ function AdminPanel({ onBack }) {
     <div className="admin-container">
       <div className="admin-header">
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
-          <button className="btn-back" onClick={onBack}>\u2190 Vista estudiante</button>
+          <button className="btn-back" onClick={onBack}>← Vista estudiante</button>
           <div>
-            <h1 style={{fontSize:"20px",fontWeight:700}}>Panel de Administraci\u00f3n</h1>
-            <p style={{fontSize:"13px",opacity:0.7}}>EIB en L\u00ednea \u00b7 Per\u00edodo {DATA.periodo}</p>
+            <h1 style={{fontSize:"20px",fontWeight:700}}>Panel de Administración</h1>
+            <p style={{fontSize:"13px",opacity:0.7}}>EIB en Línea · Período {DATA.periodo}</p>
           </div>
           <span className="admin-stat">📋 {filtered.length}/{allRows.length}</span>
         </div>
@@ -756,7 +756,7 @@ function AdminPanel({ onBack }) {
           <input type="text" placeholder="🔍 Buscar asignatura, docente o centro..." value={search} onChange={e => setSearch(e.target.value)} />
           <select value={filterNivel} onChange={e => setFilterNivel(e.target.value)}>
             <option value="">Todos los niveles</option>
-            {nivelesUnicos.map(n => <option key={n} value={n}>{n === 9 ? "Plan Contingencia" : n + "\u00b0 Nivel"}</option>)}
+            {nivelesUnicos.map(n => <option key={n} value={n}>{n === 9 ? "Plan Contingencia" : n + "° Nivel"}</option>)}
           </select>
           <select value={filterCentro} onChange={e => setFilterCentro(e.target.value)}>
             <option value="">Todos los centros</option>
@@ -769,7 +769,7 @@ function AdminPanel({ onBack }) {
             <option value="Semestral">Semestral</option>
           </select>
           <button className={`btn-copy ${copiedId === "all" ? "copied" : ""}`} onClick={copiarTodosWhatsApp} style={{padding:"8px 14px"}}>
-            {copiedId === "all" ? "\u2713 Copiados" : "📋 Copiar filtrados"}
+            {copiedId === "all" ? "✓ Copiados" : "📋 Copiar filtrados"}
           </button>
         </div>
       </div>
@@ -783,7 +783,7 @@ function AdminPanel({ onBack }) {
               <th>Bloque</th>
               <th>Asignatura</th>
               <th>Docente</th>
-              <th>D\u00eda</th>
+              <th>Día</th>
               <th>Hora</th>
               <th>Enlace</th>
               <th style={{textAlign:"center"}}>Copiar</th>
@@ -796,17 +796,17 @@ function AdminPanel({ onBack }) {
               return (
                 <React.Fragment key={i}>
                   <tr className={isExp ? "highlighted" : ""} style={{cursor:"pointer"}} onClick={() => setExpandedRow(isExp ? null : rowId)}>
-                    <td><span className="badge" style={{background: r.nivel === 9 ? "#fed7d7" : "#bee3f8", color: r.nivel === 9 ? "#9b2c2c" : "#2a4365"}}>{r.nivel === 9 ? "PC" : r.nivel + "\u00b0"}</span></td>
+                    <td><span className="badge" style={{background: r.nivel === 9 ? "#fed7d7" : "#bee3f8", color: r.nivel === 9 ? "#9b2c2c" : "#2a4365"}}>{r.nivel === 9 ? "PC" : r.nivel + "°"}</span></td>
                     <td style={{fontWeight:500}}>{r.centro}</td>
                     <td><span className="badge" style={{background: r.bloqueNum === 1 ? "#bee3f8" : r.bloqueNum === 2 ? "#fefcbf" : "#c6f6d5", color: r.bloqueNum === 1 ? "#2a4365" : r.bloqueNum === 2 ? "#744210" : "#22543d"}}>{r.bloque}</span></td>
                     <td style={{maxWidth:220}}>{r.asignaturaCorta}</td>
                     <td style={{maxWidth:180}}>{r.docente}</td>
                     <td style={{color: r.dia === "Por confirmar" ? "#d69e2e" : "inherit", fontWeight: r.dia === "Por confirmar" ? 500 : 400}}>{r.dia}</td>
                     <td style={{color: r.hora === "Por confirmar" ? "#d69e2e" : "inherit"}}>{r.hora}</td>
-                    <td>{r.enlace ? <a href={r.enlace} target="_blank" rel="noopener" style={{color:"#3182ce",fontSize:"12px"}}>Abrir \u2197</a> : <span style={{color:"#cbd5e0",fontSize:"12px"}}>\u2014</span>}</td>
+                    <td>{r.enlace ? <a href={r.enlace} target="_blank" rel="noopener" style={{color:"#3182ce",fontSize:"12px"}}>Abrir ↗</a> : <span style={{color:"#cbd5e0",fontSize:"12px"}}>—</span>}</td>
                     <td style={{textAlign:"center"}}>
                       <button className={`btn-copy ${copiedId === rowId ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoSimple(r), rowId); }}>
-                        {copiedId === rowId ? "\u2713" : "📋"}
+                        {copiedId === rowId ? "✓" : "📋"}
                       </button>
                     </td>
                   </tr>
@@ -820,10 +820,10 @@ function AdminPanel({ onBack }) {
                           </div>
                           <div style={{display:"flex",flexDirection:"column",gap:6,marginTop:16}}>
                             <button className={`btn-copy ${copiedId === rowId + "-wa" ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoWhatsApp(r), rowId + "-wa"); }} style={{padding:"8px 16px"}}>
-                              {copiedId === rowId + "-wa" ? "\u2713 Copiado" : "📋 Copiar formato WhatsApp"}
+                              {copiedId === rowId + "-wa" ? "✓ Copiado" : "📋 Copiar formato WhatsApp"}
                             </button>
                             <button className={`btn-copy ${copiedId === rowId + "-s" ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoSimple(r), rowId + "-s"); }} style={{padding:"8px 16px"}}>
-                              {copiedId === rowId + "-s" ? "\u2713 Copiado" : "📋 Copiar texto simple"}
+                              {copiedId === rowId + "-s" ? "✓ Copiado" : "📋 Copiar texto simple"}
                             </button>
                           </div>
                         </div>
@@ -874,16 +874,16 @@ function StudentView({ onAdmin }) {
   return (
     <div className="container">
       <div className="header">
-        <h1 style={{fontSize:"24px",fontWeight:700,marginBottom:4}}>Educaci\u00f3n Intercultural Biling\u00fce</h1>
-        <p style={{fontSize:"16px",opacity:0.9,marginBottom:2}}>Modalidad en L\u00ednea</p>
-        <p style={{fontSize:"14px",opacity:0.7}}>Per\u00edodo {DATA.periodo} \u00b7 {DATA.periodoLabel}</p>
-        <button className="btn-admin-toggle" onClick={onAdmin}>\u2699 Administraci\u00f3n</button>
+        <h1 style={{fontSize:"24px",fontWeight:700,marginBottom:4}}>Educación Intercultural Bilingüe</h1>
+        <p style={{fontSize:"16px",opacity:0.9,marginBottom:2}}>Modalidad en Línea</p>
+        <p style={{fontSize:"14px",opacity:0.7}}>Período {DATA.periodo} · {DATA.periodoLabel}</p>
+        <button className="btn-admin-toggle" onClick={onAdmin}>⚙ Administración</button>
       </div>
 
       <div className="card">
         <p style={{fontSize:"13px",color:"#718096",marginBottom:8,fontWeight:600,textTransform:"uppercase",letterSpacing:"0.5px"}}>1. Selecciona tu centro de apoyo</p>
         <div className="selector-grid">
-          {["Latacunga", "Cayambe", "Otavalo", "Riobamba", "Amazon\u00eda Norte", "Wasakentsa"].map(c => (
+          {["Latacunga", "Cayambe", "Otavalo", "Riobamba", "Amazonía Norte", "Wasakentsa"].map(c => (
             <button key={c} className={`btn ${centro === c ? 'active' : ''}`} onClick={() => handleCentro(c)}>{c}</button>
           ))}
         </div>
@@ -893,7 +893,7 @@ function StudentView({ onAdmin }) {
             <div className="selector-grid">
               {nivelesDisponibles.map(n => (
                 <button key={n} className={`btn ${nivel === n ? 'active' : ''}`} onClick={() => setNivel(n)}>
-                  {n === 9 ? "Plan Contingencia (9\u00b0)" : `${n}\u00b0 Nivel`}
+                  {n === 9 ? "Plan Contingencia (9°)" : `${n}° Nivel`}
                 </button>
               ))}
             </div>
