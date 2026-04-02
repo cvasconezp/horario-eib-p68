@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Horario EIB en Línea - Período 68</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -1312,6 +1315,7 @@ function AdminPanel({ onBack }) {
   const [filterNivel, setFilterNivel] = React.useState("");
   const [filterCentro, setFilterCentro] = React.useState("");
   const [filterBloque, setFilterBloque] = React.useState("");
+  const [filterDia, setFilterDia] = React.useState("");
   const [copiedId, setCopiedId] = React.useState(null);
   const [expandedRow, setExpandedRow] = React.useState(null);
 
@@ -1320,11 +1324,12 @@ function AdminPanel({ onBack }) {
   const filtered = allRows.filter(r => {
     if (search) {
       const s = search.toLowerCase();
-      if (!r.asignatura.toLowerCase().includes(s) && !r.docente.toLowerCase().includes(s) && !r.centro.toLowerCase().includes(s)) return false;
+      if (!r.asignatura.toLowerCase().includes(s) && !r.docente.toLowerCase().includes(s) && !r.centro.toLowerCase().includes(s) && !r.dia.toLowerCase().includes(s)) return false;
     }
     if (filterNivel && r.nivel !== parseInt(filterNivel)) return false;
     if (filterCentro && r.centro !== filterCentro) return false;
     if (filterBloque && r.bloque !== filterBloque) return false;
+    if (filterDia && r.dia !== filterDia) return false;
     return true;
   });
 
@@ -1372,6 +1377,14 @@ function AdminPanel({ onBack }) {
             <option value="1er Bloque">1er Bloque</option>
             <option value="2do Bloque">2do Bloque</option>
             <option value="Semestral">Semestral</option>
+          </select>
+          <select value={filterDia} onChange={e => setFilterDia(e.target.value)}>
+            <option value="">Todos los dias</option>
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles y Viernes">Miercoles/Viernes</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Por confirmar">Por confirmar</option>
           </select>
           <button className={`btn-copy ${copiedId === "all" ? "copied" : ""}`} onClick={copiarTodosWhatsApp} style={{padding:"8px 14px"}}>
             {copiedId === "all" ? "✓ Copiados" : "📋 Copiar filtrados"}
