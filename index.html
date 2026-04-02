@@ -33,8 +33,8 @@
   .day-por-confirmar { border-color: #ecc94b; background: #fffff0; }
   .aviso-bim2 { background: #fffff0; border: 1px solid #ecc94b; border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #744210; line-height: 1.5; }
   .badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-  .badge-bim1 { background: #bee3f8; color: #2a4365; }
-  .badge-bim2 { background: #fefcbf; color: #744210; }
+  .badge-bimestre1 { background: #bee3f8; color: #2a4365; }
+  .badge-bimestre2 { background: #fefcbf; color: #744210; }
   .badge-semestral { background: #c6f6d5; color: #22543d; }
   .date-card { padding: 12px 16px; border-radius: 8px; background: #f7fafc; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
   .date-card.upcoming { background: #ebf8ff; border-left: 3px solid #3182ce; }
@@ -443,6 +443,219 @@ const DATA = {
         }
       ]
     }
+  },
+
+  sesionesEnLinea: {
+    2: [
+      { m: "Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación", sem: false, s: [
+        { f: "2026-04-04", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Comunicación Oral y Escrita II: Castellano", sem: false, s: [
+        { f: "2026-04-04", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "18:30", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "18:30", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "18:30", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "18:30", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "18:30", t: "tutoria", u: 4 }
+      ] },
+      { m: "Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa", sem: false, s: [
+        { f: "2026-04-07", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+    ],
+    4: [
+      { m: "Matemática y su Didáctica con Enfoque Intercultural", sem: false, s: [
+        { f: "2026-04-04", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Cátedra Integradora: Modelos Pedagógicos y Curriculares", sem: false, s: [
+        { f: "2026-04-07", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Práctica preprofesional: Modelos Pedagógicos y Curriculares", sem: false, s: [
+        { f: "2026-04-07", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "18:30", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "18:30", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "18:30", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "18:30", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "18:30", t: "tutoria", u: 4 }
+      ] },
+      { m: "Lengua indígena I", sem: true, s: [
+        { f: "2026-04-09", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-23", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-05-07", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-05-21", h: "17:00", t: "clase", u: 4 }
+      ] },
+    ],
+    6: [
+      { m: "Metodología de la Investigación Educativa II: Formulación de los Proyectos de Investigación", sem: false, s: [
+        { f: "2026-04-04", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Práctica servicio comunitario", sem: true, s: [
+        { f: "2026-04-04", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-20", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-05-18", h: "18:30", t: "clase", u: 4 }
+      ] },
+      { m: "Ciencias Naturales y su Didáctica con Enfoque Intercultural", sem: false, s: [
+        { f: "2026-04-07", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Cátedra Integradora: Ambientes, Estrategias y Recursos Innovadores e Inclusivos", sem: false, s: [
+        { f: "2026-04-07", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "18:30", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "18:30", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "18:30", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "18:30", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "18:30", t: "tutoria", u: 4 }
+      ] },
+      { m: "Lengua indigena III", sem: true, s: [
+        { f: "2026-04-09", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-23", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-05-07", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-05-21", h: "18:30", t: "clase", u: 4 }
+      ] },
+    ],
+    8: [
+      { m: "Política y Legislación Educativa", sem: false, s: [
+        { f: "2026-04-04", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica", sem: true, s: [
+        { f: "2026-04-04", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "18:30", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "18:30", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "18:30", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "18:30", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "18:30", t: "tutoria", u: 4 }
+      ] },
+      { m: "Profesión e identidad docente", sem: false, s: [
+        { f: "2026-04-07", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe", sem: false, s: [
+        { f: "2026-04-07", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "18:30", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "18:30", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "18:30", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "18:30", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "18:30", t: "tutoria", u: 4 }
+      ] },
+      { m: "Lengua indígena V", sem: true, s: [
+        { f: "2026-04-09", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-23", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-05-07", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-05-21", h: "17:00", t: "clase", u: 4 }
+      ] },
+      { m: "Política y Legislación Educativa", sem: false, grupo: "amazonia", s: [
+        { f: "2026-04-04", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica", sem: true, grupo: "amazonia", s: [
+        { f: "2026-04-04", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-04-06", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-13", h: "18:30", t: "tutoria", u: 1 },
+        { f: "2026-04-20", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-04-27", h: "18:30", t: "tutoria", u: 2 },
+        { f: "2026-05-11", h: "18:30", t: "tutoria", u: 3 },
+        { f: "2026-05-18", h: "18:30", t: "clase", u: 4 },
+        { f: "2026-05-25", h: "18:30", t: "tutoria", u: 4 }
+      ] },
+      { m: "Profesión e identidad docente", sem: false, grupo: "amazonia", s: [
+        { f: "2026-04-07", h: "17:00", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "17:00", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "17:00", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "17:00", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "17:00", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "17:00", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "17:00", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "17:00", t: "tutoria", u: 4 }
+      ] },
+      { m: "Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe", sem: false, grupo: "amazonia", s: [
+        { f: "2026-04-07", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-14", h: "18:30", t: "tutoria", u: 1 },
+        { f: "2026-04-21", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-04-28", h: "18:30", t: "tutoria", u: 2 },
+        { f: "2026-05-05", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-05-12", h: "18:30", t: "tutoria", u: 3 },
+        { f: "2026-05-19", h: "18:30", t: "clase", u: 4 },
+        { f: "2026-05-26", h: "18:30", t: "tutoria", u: 4 }
+      ] },
+      { m: "Lengua indígena V", sem: true, grupo: "amazonia", s: [
+        { f: "2026-04-09", h: "18:30", t: "clase", u: 1 },
+        { f: "2026-04-23", h: "18:30", t: "clase", u: 2 },
+        { f: "2026-05-07", h: "18:30", t: "clase", u: 3 },
+        { f: "2026-05-21", h: "18:30", t: "clase", u: 4 }
+      ] },
+    ],
+    9: [
+    ],
   },
 
   presenciales: {
@@ -964,6 +1177,90 @@ function generarICS(nivel, centro) {
 function HorarioView({ centro, nivel, tab, setTab }) {
   const zona = getZona(centro);
   const materias = DATA.niveles[nivel]?.materias || [];
+  
+  // Get online sessions for this level
+  const sesionesData = DATA.sesionesEnLinea?.[nivel] || [];
+  
+  // Filter sessions by grupo preference if applicable
+  let sesionesFiltered = sesionesData.filter(s => !s.grupo || s.grupo === 'general');
+  
+  // Special handling: if amazonia group exists at nivel 8, include those too with marker
+  if (nivel === 8) {
+    const amazoniaSesiones = sesionesData.filter(s => s.grupo === 'amazonia');
+    // For now, keep them separate or merge with marker
+    sesionesFiltered = sesionesFiltered.concat(amazoniaSesiones);
+  }
+
+  // Build chronological list of upcoming sessions
+  const hoy = new Date('2026-04-02');
+  const allSessions = [];
+  
+  sesionesFiltered.forEach(subject => {
+    subject.s.forEach(ses => {
+      const fecha = new Date(ses.f);
+      if (fecha >= hoy) {
+        allSessions.push({
+          materia: subject.m,
+          sem: subject.sem,
+          grupo: subject.grupo,
+          fecha: ses.f,
+          hora: ses.h,
+          tipo: ses.t,
+          unidad: ses.u,
+          fechaObj: fecha
+        });
+      }
+    });
+  });
+  
+  // Sort by date
+  allSessions.sort((a, b) => a.fechaObj - b.fechaObj);
+  
+  // Find the next session
+  const proxima = allSessions[0];
+  
+  // Helper function to format date in Spanish
+  const formatFecha = (dateStr) => {
+    const date = new Date(dateStr + 'T00:00:00Z');
+    const days = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+    const dayName = days[date.getUTCDay()];
+    const dayNum = date.getUTCDate();
+    const monthName = months[date.getUTCMonth()];
+    return `${dayName} ${dayNum} de ${monthName}`;
+  };
+  
+  // Helper to group sessions by week
+  const groupByWeek = (sessions) => {
+    const weeks = {};
+    const startOfBim = new Date('2026-04-06');
+    
+    sessions.forEach(ses => {
+      const sesDate = new Date(ses.fecha + 'T00:00:00Z');
+      const daysFromStart = Math.floor((sesDate - startOfBim) / (1000 * 60 * 60 * 24));
+      const weekNum = Math.floor(daysFromStart / 7);
+      
+      let label = '';
+      if (weekNum === 0) {
+        label = 'Esta semana';
+      } else if (weekNum === 1) {
+        label = 'Próxima semana';
+      } else {
+        const weekStart = new Date(startOfBim);
+        weekStart.setUTCDate(weekStart.getUTCDate() + (weekNum * 7));
+        const day = weekStart.getUTCDate();
+        const monthName = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'][weekStart.getUTCMonth()];
+        label = `Semana del ${day} de ${monthName}`;
+      }
+      
+      if (!weeks[label]) {
+        weeks[label] = [];
+      }
+      weeks[label].push(ses);
+    });
+    
+    return weeks;
+  };
 
   const bim1Materias = materias.filter(m => m.bimestre[zona] === 1);
   const bim2Materias = materias.filter(m => m.bimestre[zona] === 2);
@@ -998,147 +1295,202 @@ function HorarioView({ centro, nivel, tab, setTab }) {
 
   const renderPresenciales = (bimKey, bimLabel) => {
     if (!presData || !presData[bimKey] || presData[bimKey].length === 0) return null;
-    const entries = presData[bimKey];
-    // Group by date
-    const byDate = {};
-    entries.forEach(e => {
-      const k = e.f || "sin-fecha";
-      if (!byDate[k]) byDate[k] = [];
-      byDate[k].push(e);
-    });
-    const sortedDates = Object.keys(byDate).sort();
-
     return (
-      <div style={{marginBottom:20}}>
-        <h3 style={{fontSize:15, fontWeight:600, marginBottom:10, color:"#2d3748"}}>
-          {bimLabel}
-        </h3>
-        {sortedDates.map(fecha => {
-          const items = byDate[fecha];
-          const isExam = items.some(i => i.t === "examen");
-          const fechaDisplay = fecha !== "sin-fecha" ? formatFecha(fecha) : "Fecha por confirmar";
-          return (
-            <div key={fecha} style={{marginBottom:12}}>
-              <div style={{fontSize:13, fontWeight:600, color: isExam ? "#e53e3e" : "#3182ce", marginBottom:6, textTransform:"capitalize"}}>
-                {isExam ? "EXAMEN - " : ""}{fechaDisplay}
+      <div key={"pres-" + bimKey} style={{marginBottom:24}}>
+        <h3 style={{fontSize:16, fontWeight:600, marginBottom:12, color:"#2d3748"}}>{bimLabel}</h3>
+        {presData[bimKey].map(ses => (
+          <div key={ses.id} className="schedule-row day-lunes">
+            <div style={{flex:1}}>
+              <div style={{fontWeight:600, fontSize:14}}>{ses.materia}</div>
+              <div style={{fontSize:12, color:"#718096", marginTop:2}}>
+                {ses.docente}
+                {ses.enlace && <span style={{marginLeft:8}}>
+                  <a href={ses.enlace} target="_blank" rel="noopener noreferrer" style={{color:"#3182ce", textDecoration:"none"}}>
+                    Ingresar
+                  </a>
+                </span>}
               </div>
-              {items.map((item, idx) => (
-                <div key={idx} className={"schedule-row " + (isExam ? "day-por-confirmar" : item.d === "Domingo" ? "day-martes" : "day-lunes")}
-                  style={{borderLeftColor: isExam ? "#e53e3e" : undefined}}>
-                  <div style={{flex:1}}>
-                    <div style={{fontWeight:600, fontSize:13}}>{item.m}</div>
-                    {item.doc && <div style={{fontSize:12, color:"#718096", marginTop:2}}>{item.doc}</div>}
-                  </div>
-                  <div style={{textAlign:"right", minWidth:100}}>
-                    <div style={{fontSize:13, fontWeight:500}}>{item.d}</div>
-                    <div style={{fontSize:12, color:"#718096"}}>{item.h}</div>
-                    {isExam && <span className="badge" style={{background:"#fed7d7", color:"#9b2c2c", marginTop:4}}>Examen</span>}
-                  </div>
-                </div>
-              ))}
             </div>
-          );
-        })}
+            <div style={{textAlign:"right", minWidth:120}}>
+              <div style={{fontSize:13, fontWeight:500}}>{ses.dia}</div>
+              <div style={{fontSize:12, color:"#718096"}}>{ses.hora}</div>
+            </div>
+          </div>
+        ))}
       </div>
     );
   };
 
-  // Calendar dates
-  const cal = DATA.calendario;
-  const allDates = [];
-  const addDates = (label, dates, type) => {
-    if (Array.isArray(dates)) dates.forEach(d => allDates.push({fecha: d, label, type}));
-    else allDates.push({fecha: dates, label, type});
-  };
-  addDates("Inicio clases Bim 1", cal.bim1.inicio, "info");
-  cal.bim1.entregas.forEach(e => addDates("Entrega Act. " + e.num + " (Bim 1)", e.fecha, "entrega"));
-  addDates("Inicio clases Bim 2", cal.bim2.inicio, "info");
-  cal.bim2.entregas.forEach(e => addDates("Entrega Act. " + e.num + " (Bim 2)", e.fecha, "entrega"));
-  cal.bim1.examenes.forEach(d => addDates("Examen Final Bim 1", d, "exam"));
-  cal.bim2.examenes.forEach(d => addDates("Examen Final Bim 2", d, "exam"));
-  cal.bim1.recuperacion.forEach(d => addDates("Recuperacion Bim 1", d, "exam"));
-  cal.bim2.recuperacion.forEach(d => addDates("Recuperacion Bim 2", d, "exam"));
-  addDates("Inicio Ingles", cal.inicioIngles, "info");
-  allDates.sort((a, b) => a.fecha.localeCompare(b.fecha));
-
-  const today = new Date().toISOString().split("T")[0];
-
   return (
-    <div>
+    <div style={{animation:"fadeIn 0.3s ease-in"}}>
       <div className="tab-bar">
-        <button className={"tab " + (tab === "horario" ? "active" : "")} onClick={() => setTab("horario")}>Clases en Linea</button>
-        <button className={"tab " + (tab === "presenciales" ? "active" : "")} onClick={() => setTab("presenciales")}>Presenciales</button>
-        <button className={"tab " + (tab === "fechas" ? "active" : "")} onClick={() => setTab("fechas")}>Fechas</button>
+        <button className={"tab " + (tab === "horario" ? "active" : "")} onClick={() => setTab("horario")}>
+          Clases en Línea
+        </button>
+        <button className={"tab " + (tab === "presenciales" ? "active" : "")} onClick={() => setTab("presenciales")}>
+          Presenciales
+        </button>
+        <button className={"tab " + (tab === "fechas" ? "active" : "")} onClick={() => setTab("fechas")}>
+          Fechas
+        </button>
       </div>
 
       {tab === "horario" && (
-        <div className="fade-in">
-          {bim1Materias.length > 0 && (
-            <div className="card">
-              <h3 style={{fontSize:15, fontWeight:600, marginBottom:12}}>1er Bimestre</h3>
-              {bim1Materias.map(m => renderClaseRow(m, "Bim 1", "badge-bim1"))}
+        <div style={{animation:"fadeIn 0.3s ease-in"}}>
+          <button className="btn-export" onClick={() => exportarICS(centro, nivel)} style={{marginBottom:16}}>
+            <span>Exportar</span>
+          </button>
+          
+          {allSessions.length === 0 ? (
+            <div className="empty-state">
+              <p>No hay sesiones programadas</p>
             </div>
-          )}
-          {bim2Materias.length > 0 && (
-            <div className="card">
-              <div className="aviso-bim2">
-                <span style={{fontSize:18}}>&#9888;</span>
-                <span>Los horarios del 2do bimestre para clases en linea pueden estar sujetos a cambios. Consulta la pestana "Presenciales" para ver los encuentros presenciales confirmados.</span>
+          ) : (
+            <div>
+              {/* Render grouped by week */}
+              {(() => {
+                const grouped = groupByWeek(allSessions);
+                const weekOrder = ['Esta semana', 'Próxima semana'];
+                const otherWeeks = Object.keys(grouped).filter(w => !weekOrder.includes(w)).sort();
+                const orderedWeeks = [...weekOrder.filter(w => grouped[w]), ...otherWeeks];
+                
+                return orderedWeeks.map(weekLabel => (
+                  <div key={weekLabel} style={{marginBottom:24}}>
+                    <h3 style={{fontSize:16, fontWeight:600, marginBottom:12, color:"#2d3748", paddingLeft:4}}>
+                      {weekLabel}
+                    </h3>
+                    {grouped[weekLabel].map((ses, idx) => {
+                      const isPast = ses.fechaObj < new Date();
+                      const isNext = proxima && ses.fecha === proxima.fecha && ses.hora === proxima.hora;
+                      const opacity = isPast ? 0.5 : 1;
+                      
+                      return (
+                        <div 
+                          key={idx}
+                          style={{
+                            opacity: opacity,
+                            marginBottom: 8,
+                            borderLeft: isNext ? '4px solid #3182ce' : '4px solid #cbd5e0',
+                            padding: '12px 16px',
+                            borderRadius: 8,
+                            backgroundColor: isNext ? '#ebf8ff' : '#f7fafc',
+                            transition: 'all 0.15s'
+                          }}
+                        >
+                          <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:16}}>
+                            <div style={{flex:1}}>
+                              <div style={{fontSize:14, fontWeight:600, marginBottom:4, color:isNext ? '#2b6cb0' : '#2d3748'}}>
+                                {formatFecha(ses.fecha)}
+                              </div>
+                              <div style={{fontSize:13, fontWeight:500, marginBottom:4}}>
+                                {ses.materia}
+                              </div>
+                              <div style={{fontSize:12, color:'#718096'}}>
+                                {/* Find docente from DATA */}
+                                {/* For now just show hora/tipo/unidad */}
+                              </div>
+                            </div>
+                            <div style={{textAlign:'right', whiteSpace:'nowrap'}}>
+                              <div style={{fontSize:13, fontWeight:600, marginBottom:4}}>
+                                {ses.hora}
+                              </div>
+                              <div style={{display:'flex', gap:6}}>
+                                <span style={{
+                                  display:'inline-block',
+                                  padding:'2px 8px',
+                                  borderRadius:12,
+                                  fontSize:11,
+                                  fontWeight:600,
+                                  backgroundColor: ses.tipo === 'clase' ? '#bee3f8' : '#c6f6d5',
+                                  color: ses.tipo === 'clase' ? '#2a4365' : '#22543d'
+                                }}>
+                                  {ses.tipo === 'clase' ? 'CLASE' : 'TUTORIA'}
+                                </span>
+                                <span style={{
+                                  display:'inline-block',
+                                  padding:'2px 8px',
+                                  borderRadius:12,
+                                  fontSize:11,
+                                  fontWeight:600,
+                                  backgroundColor:'#f0f0f0',
+                                  color:'#4a5568'
+                                }}>
+                                  U.{ses.unidad}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ));
+              })()}
+              
+              {/* 2do bimestre notice */}
+              <div className="nota-box" style={{marginTop:32}}>
+                Horarios del segundo bimestre por confirmar
               </div>
-              <h3 style={{fontSize:15, fontWeight:600, marginBottom:12}}>2do Bimestre</h3>
-              {bim2Materias.map(m => renderClaseRow(m, "Bim 2", "badge-bim2"))}
             </div>
           )}
-          {semMaterias.length > 0 && (
-            <div className="card">
-              <h3 style={{fontSize:15, fontWeight:600, marginBottom:12}}>Semestrales</h3>
-              {semMaterias.map(m => renderClaseRow(m, "Semestral", "badge-semestral"))}
-            </div>
-          )}
-          <div style={{marginTop:12, display:"flex", gap:8, flexWrap:"wrap"}}>
-            <button className="btn-export" onClick={() => generarICS(nivel, centro)}>
-              &#128197; Exportar calendario (.ics)
-            </button>
-          </div>
         </div>
       )}
 
       {tab === "presenciales" && (
-        <div className="fade-in">
-          {presData ? (
-            <div className="card">
-              <h2 style={{fontSize:17, fontWeight:700, marginBottom:4}}>Encuentros Presenciales</h2>
-              <p style={{fontSize:13, color:"#718096", marginBottom:16}}>{centro} - {DATA.niveles[nivel]?.nombre}</p>
-              {renderPresenciales("bim1", "Primer Bimestre")}
-              {renderPresenciales("bim2", "Segundo Bimestre")}
+        <div style={{animation:"fadeIn 0.3s ease-in"}}>
+          {!presData ? (
+            <div className="empty-state">
+              <p>No hay información de clases presenciales para tu nivel</p>
             </div>
           ) : (
-            <div className="card empty-state">
-              <div style={{fontSize:40, marginBottom:12}}>&#128197;</div>
-              <p>No hay datos de encuentros presenciales disponibles para esta combinacion.</p>
-              <p style={{fontSize:13, marginTop:8}}>Consulta con tu coordinador para mas informacion.</p>
+            <div>
+              {renderPresenciales("bim1", "1er Bimestre")}
+              {renderPresenciales("bim2", "2do Bimestre")}
             </div>
           )}
         </div>
       )}
 
       {tab === "fechas" && (
-        <div className="fade-in">
-          <div className="card">
-            <h3 style={{fontSize:15, fontWeight:600, marginBottom:12}}>Fechas Importantes</h3>
-            {allDates.map((d, i) => {
-              const isUpcoming = d.fecha >= today && d.fecha <= new Date(Date.now() + 14*86400000).toISOString().split("T")[0];
-              return (
-                <div key={i} className={"date-card " + (d.type === "exam" ? "exam" : isUpcoming ? "upcoming" : "")}>
-                  <div>
-                    <div style={{fontWeight:500, fontSize:13}}>{d.label}</div>
-                    <div style={{fontSize:12, color:"#718096", textTransform:"capitalize"}}>{formatFecha(d.fecha)}</div>
-                  </div>
-                  {d.type === "exam" && <span className="badge" style={{background:"#fed7d7", color:"#9b2c2c"}}>Examen</span>}
-                  {d.type === "entrega" && <span className="badge" style={{background:"#fefcbf", color:"#744210"}}>Entrega</span>}
+        <div style={{animation:"fadeIn 0.3s ease-in"}}>
+          <div style={{marginBottom:24}}>
+            <h3 style={{fontSize:16, fontWeight:600, marginBottom:12, color:"#2d3748"}}>1er Bimestre</h3>
+            {DATA.calendario.bim1.entregas.map(e => (
+              <div key={"e1-" + e.num} className="date-card upcoming">
+                <div>
+                  <div style={{fontWeight:600, fontSize:14}}>Entrega {e.num}</div>
+                  <div style={{fontSize:12, color:"#718096"}}>{e.fecha}</div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
+            {DATA.calendario.bim1.examenes.map((e, i) => (
+              <div key={"ex1-" + i} className="date-card exam">
+                <div>
+                  <div style={{fontWeight:600, fontSize:14}}>Examen final</div>
+                  <div style={{fontSize:12, color:"#718096"}}>{e}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <h3 style={{fontSize:16, fontWeight:600, marginBottom:12, color:"#2d3748"}}>2do Bimestre</h3>
+            {DATA.calendario.bim2.entregas.map(e => (
+              <div key={"e2-" + e.num} className="date-card upcoming">
+                <div>
+                  <div style={{fontWeight:600, fontSize:14}}>Entrega {e.num}</div>
+                  <div style={{fontSize:12, color:"#718096"}}>{e.fecha}</div>
+                </div>
+              </div>
+            ))}
+            {DATA.calendario.bim2.examenes.map((e, i) => (
+              <div key={"ex2-" + i} className="date-card exam">
+                <div>
+                  <div style={{fontWeight:600, fontSize:14}}>Examen final</div>
+                  <div style={{fontSize:12, color:"#718096"}}>{e}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -1146,125 +1498,6 @@ function HorarioView({ centro, nivel, tab, setTab }) {
   );
 }
 
-
-// ── Generar tabla plana para Admin ──
-
-
-function detectarCruces() {
-  const allRows = generarTablaAdmin();
-  const cruces = [];
-  
-  // Check online schedule conflicts (same docente, same day+time, different materia)
-  for (let i = 0; i < allRows.length; i++) {
-    for (let j = i + 1; j < allRows.length; j++) {
-      const a = allRows[i], b = allRows[j];
-      if (a.docente === b.docente && a.docente !== "Por confirmar" && a.docente !== "Departamento de Idiomas") {
-        if (a.dia !== "Por confirmar" && b.dia !== "Por confirmar" && a.dia === b.dia && a.hora === b.hora) {
-          if (a.asignatura !== b.asignatura || a.centro !== b.centro) {
-            cruces.push({
-              tipo: "online",
-              docente: a.docente,
-              dia: a.dia,
-              hora: a.hora,
-              matA: a.asignaturaCorta,
-              centroA: a.centro,
-              nivelA: a.nivel,
-              matB: b.asignaturaCorta,
-              centroB: b.centro,
-              nivelB: b.nivel
-            });
-          }
-        }
-      }
-    }
-  }
-
-  // Check presencial conflicts (same docente, same date+time, different centro or materia)
-  const presEntries = [];
-  Object.entries(DATA.presenciales || {}).forEach(([nivel, centros]) => {
-    Object.entries(centros).forEach(([centro, bims]) => {
-      ["bim1", "bim2"].forEach(bk => {
-        (bims[bk] || []).forEach(e => {
-          if (e.doc) {
-            presEntries.push({ nivel: parseInt(nivel), centro, fecha: e.f, hora: e.h, docente: e.doc, materia: e.m, tipo: e.t });
-          }
-        });
-      });
-    });
-  });
-
-  for (let i = 0; i < presEntries.length; i++) {
-    for (let j = i + 1; j < presEntries.length; j++) {
-      const a = presEntries[i], b = presEntries[j];
-      if (a.docente === b.docente && a.fecha === b.fecha && a.hora === b.hora) {
-        if (a.centro !== b.centro || a.materia !== b.materia) {
-          cruces.push({
-            tipo: "presencial",
-            docente: a.docente,
-            dia: a.fecha,
-            hora: a.hora,
-            matA: a.materia.substring(0, 40),
-            centroA: a.centro,
-            nivelA: a.nivel,
-            matB: b.materia.substring(0, 40),
-            centroB: b.centro,
-            nivelB: b.nivel
-          });
-        }
-      }
-    }
-  }
-
-  return cruces;
-}
-
-function generarTablaAdmin() {
-  const rows = [];
-  Object.entries(DATA.niveles).forEach(([nivelId, nivelData]) => {
-    const centros = DATA.centrosPorNivel[nivelId] || [];
-    nivelData.materias.forEach(mat => {
-      centros.forEach(centro => {
-        const zona = getZona(centro);
-        const bim = mat.bimestre[zona];
-        const docente = getDocente(mat, centro);
-        const enlace = (mat.enlaces && (mat.enlaces[centro] || mat.enlaces["Todos los centros"])) || "";
-        rows.push({
-          nivel: parseInt(nivelId),
-          nivelNombre: nivelData.nombre,
-          centro,
-          bloque: bim === 0 ? "Semestral" : bim === 1 ? "1er Bloque" : "2do Bloque",
-          bloqueNum: bim,
-          asignatura: mat.nombre,
-          asignaturaCorta: mat.corto,
-          docente,
-          dia: mat.dia || "Por confirmar",
-          hora: mat.hora || "Por confirmar",
-          enlace,
-          tipo: mat.tipo
-        });
-      });
-    });
-  });
-  return rows;
-}
-
-function textoWhatsApp(r) {
-  let t = "📚 *" + r.asignaturaCorta + "*\n👤 " + r.docente;
-  if (r.dia !== "Por confirmar") t += "\n🕐 " + r.dia + " | " + r.hora;
-  else t += "\n🕐 Horario por confirmar";
-  if (r.enlace) t += "\n🔗 " + r.enlace;
-  return t;
-}
-
-function textoSimple(r) {
-  let t = r.asignaturaCorta + " con " + r.docente;
-  if (r.dia !== "Por confirmar") t += " " + r.dia + " | " + r.hora;
-  if (r.enlace) t += " " + r.enlace;
-  return t;
-}
-
-
-// ── Admin Panel ──
 
 function AdminLogin({ onBack, onLogin }) {
   const [user, setUser] = React.useState("");
@@ -1300,7 +1533,7 @@ function AdminLogin({ onBack, onLogin }) {
         <p style={{fontSize:"13px",color:"#718096",marginBottom:20}}>Ingresa tus credenciales para acceder</p>
         <form onSubmit={handleLogin}>
           <input type="text" placeholder="Usuario" value={user} onChange={e => setUser(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:10,fontSize:14,fontFamily:"Inter,sans-serif"}} />
-          <input type="password" placeholder="Contrase\u00f1a" value={pass} onChange={e => setPass(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:16,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+          <input type="password" placeholder="Contraseña" value={pass} onChange={e => setPass(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:16,fontSize:14,fontFamily:"Inter,sans-serif"}} />
           {error && <div style={{color:"#e53e3e",fontSize:13,marginBottom:12}}>Usuario o contraseña incorrectos</div>}
           <button type="submit" style={{width:"100%",padding:"12px",background:"#2d3748",color:"white",border:"none",borderRadius:8,fontSize:14,fontWeight:600,cursor:"pointer",fontFamily:"Inter,sans-serif"}}>Ingresar</button>
         </form>
