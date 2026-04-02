@@ -1,0 +1,791 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EIB UPS//Horario P68//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/Guayaquil
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0500
+DTSTART:19700101T000000
+TZNAME:ECT
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:f077cfe9-f8ab-55ad-b593-e92976209d58@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260404T170000
+DTEND;TZID=America/Guayaquil:20260404T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1cef5dff-819d-59e8-b45f-f8e8dcac7b40@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260406T170000
+DTEND;TZID=America/Guayaquil:20260406T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:14bacad8-ade0-5489-bb85-8060b1e735b1@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260413T170000
+DTEND;TZID=America/Guayaquil:20260413T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c902350a-18ae-580f-98df-11cd5e283c68@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260420T170000
+DTEND;TZID=America/Guayaquil:20260420T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ee2e6d29-cb1f-53b5-a2d3-d70d0c6a4d96@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260427T170000
+DTEND;TZID=America/Guayaquil:20260427T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:da1876ab-1328-5ba6-ab31-d7c1474ce5cf@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260511T170000
+DTEND;TZID=America/Guayaquil:20260511T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:815a8d6d-8dc5-5c3a-b290-9802e5b71023@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260518T170000
+DTEND;TZID=America/Guayaquil:20260518T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f6c7e1bb-1213-5ba6-ae97-f072fd90974d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260525T170000
+DTEND;TZID=America/Guayaquil:20260525T183000
+SUMMARY:Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Aproximación a los Contextos y a los Sujetos de la Educación
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fc95f339-004c-51c4-96ec-74ec1413c695@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260404T183000
+DTEND;TZID=America/Guayaquil:20260404T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e711a836-52ea-558f-bd78-4bdc07eaf9d2@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260406T183000
+DTEND;TZID=America/Guayaquil:20260406T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:54544086-5f41-59d7-ba85-d9625a02e091@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260413T183000
+DTEND;TZID=America/Guayaquil:20260413T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1765bb1e-bfef-5511-88c9-aef78a229e88@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260420T183000
+DTEND;TZID=America/Guayaquil:20260420T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7edf9253-48fa-52b1-b45b-f51b329379e7@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260427T183000
+DTEND;TZID=America/Guayaquil:20260427T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:232c2ead-2825-5848-86c2-0e6957ce71f9@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260511T183000
+DTEND;TZID=America/Guayaquil:20260511T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:490eb533-cf6b-54ec-b5b4-62435c453c34@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260518T183000
+DTEND;TZID=America/Guayaquil:20260518T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8e27cacb-8c54-5f00-8500-3be1de8c7af6@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260525T183000
+DTEND;TZID=America/Guayaquil:20260525T200000
+SUMMARY:Comunicación Oral y Escrita II: Castellano (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Comunicación Oral y Escrita II: Castellano
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a60d08c4-034b-5760-80e2-f0ba94af8951@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260407T170000
+DTEND;TZID=America/Guayaquil:20260407T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a4daa914-99e2-5eeb-95d1-e3cada1ab8f3@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260414T170000
+DTEND;TZID=America/Guayaquil:20260414T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:acac411d-7e84-594d-b052-fc9323662c2e@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260421T170000
+DTEND;TZID=America/Guayaquil:20260421T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:22576d33-cb26-5037-b17e-1e7f37c69b1e@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260428T170000
+DTEND;TZID=America/Guayaquil:20260428T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0e4d1dca-230b-5c0f-af3f-4babf50ccb82@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260505T170000
+DTEND;TZID=America/Guayaquil:20260505T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:116aa5a3-3faa-5ef1-b6ce-df96d23c4547@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260512T170000
+DTEND;TZID=America/Guayaquil:20260512T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8808ee8c-6c49-5112-afaf-a0c7ccab294c@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260519T170000
+DTEND;TZID=America/Guayaquil:20260519T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1304beb8-1b46-566a-b094-71e6955d257f@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260526T170000
+DTEND;TZID=America/Guayaquil:20260526T183000
+SUMMARY:Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1ef3c646-c2d7-5bc4-ae6e-f2a78886f0ec@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260419
+DTEND;VALUE=DATE:20260420
+SUMMARY:Entrega 1 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 1 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0e9b7f90-e6be-506b-8735-da6bb31ce2b6@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260503
+DTEND;VALUE=DATE:20260504
+SUMMARY:Entrega 2 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 2 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cc0af7fd-358e-575b-941f-7aa81a66a316@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260517
+DTEND;VALUE=DATE:20260518
+SUMMARY:Entrega 3 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 3 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:252ff972-e88d-5a40-ab3e-603382eac1b0@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260529
+DTEND;VALUE=DATE:20260530
+SUMMARY:Entrega 4 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 4 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ad360445-2d14-5ebe-9958-2d698c68bcff@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:Entrega 1 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 1 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1f613042-9b45-586d-aff1-1d934f5aad0c@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260705
+DTEND;VALUE=DATE:20260706
+SUMMARY:Entrega 2 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 2 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:27ff3a8f-127a-531b-8c6a-6bd292790dad@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260719
+DTEND;VALUE=DATE:20260720
+SUMMARY:Entrega 3 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 3 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2173483e-122e-547a-9f21-42b1f0eb7f0c@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Entrega 4 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 4 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0154b30b-7f88-55ba-8034-bd3e526f41bf@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260530
+DTEND;VALUE=DATE:20260531
+SUMMARY:Examen (BIM1)
+DESCRIPTION:Día de examen para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d4718a89-8e52-53c0-b1f0-abe449888319@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:Examen (BIM1)
+DESCRIPTION:Día de examen para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:97bb85d9-c3f6-5e7a-9ba7-a98d0e5114ff@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260802
+SUMMARY:Examen (BIM2)
+DESCRIPTION:Día de examen para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fea27283-8161-50a5-81a6-9fce7e789719@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260802
+DTEND;VALUE=DATE:20260803
+SUMMARY:Examen (BIM2)
+DESCRIPTION:Día de examen para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8588fafb-af3e-5a51-9b6d-63b2044a902b@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+SUMMARY:Examen de Recuperación (BIM1)
+DESCRIPTION:Examen de recuperación para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dfcd283c-c307-543f-8034-062abbce612f@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:Examen de Recuperación (BIM1)
+DESCRIPTION:Examen de recuperación para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b3922fdb-ce57-5908-861d-3209d30814b6@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260808
+DTEND;VALUE=DATE:20260809
+SUMMARY:Examen de Recuperación (BIM2)
+DESCRIPTION:Examen de recuperación para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:140b989a-f6a0-5657-9347-1c8a9ca3bbde@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260809
+DTEND;VALUE=DATE:20260810
+SUMMARY:Examen de Recuperación (BIM2)
+DESCRIPTION:Examen de recuperación para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:da792753-3850-5697-b927-d85bacbc84be@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260411T083000
+DTEND;TZID=America/Guayaquil:20260411T120000
+SUMMARY:Clase Presencial: Metodología de la Investigación Educativa I
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Guillermo Guato\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bee0689a-8e6f-58ec-9856-01966fa9c845@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260411T130000
+DTEND;TZID=America/Guayaquil:20260411T163000
+SUMMARY:Clase Presencial: Comunicación Oral y Escrita II
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Hernán Hermosa\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:47e0ff0a-1995-592c-a45d-433d95ae4555@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260412T083000
+DTEND;TZID=America/Guayaquil:20260412T120000
+SUMMARY:Clase Presencial: Práctica Preprofesional
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Víctor Oquendo\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dbdad2eb-23f3-5665-b11e-81a555a6c54d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260425T083000
+DTEND;TZID=America/Guayaquil:20260425T120000
+SUMMARY:Clase Presencial: Práctica Preprofesional
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Víctor Oquendo\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:405fcf1e-01ce-584c-a99c-cd85b89d6d33@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260509T083000
+DTEND;TZID=America/Guayaquil:20260509T120000
+SUMMARY:Clase Presencial: Metodología de la Investigación Educativa I
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Guillermo Guato\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8da6c6f8-809e-58ed-bff6-3cb3ce44ad69@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260509T130000
+DTEND;TZID=America/Guayaquil:20260509T163000
+SUMMARY:Clase Presencial: Comunicación Oral y Escrita II
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Hernán Hermosa\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ee85dc2c-96da-5183-b498-26537b097dd6@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260530T103000
+DTEND;TZID=America/Guayaquil:20260530T123000
+SUMMARY:EXAMEN PRESENCIAL: Comunicación Oral y Escrita II
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Hernán Hermosa\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ad9c7304-8397-5fc1-9360-5fa95f024d6c@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260530T083000
+DTEND;TZID=America/Guayaquil:20260530T103000
+SUMMARY:EXAMEN PRESENCIAL: Metodología de la Investigación Educativa I
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Guillermo Guato\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:223aefdd-1f19-5197-8b1f-6d0f237d46e9@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260606T083000
+DTEND;TZID=America/Guayaquil:20260606T120000
+SUMMARY:Clase Presencial: Historia de los Pueblos
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Mario Chicaiza\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d6da8b59-90e1-578e-a27f-4d07398a45b8@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260606T130000
+DTEND;TZID=America/Guayaquil:20260606T163000
+SUMMARY:Clase Presencial: Cátedra Integradora
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Víctor Oquendo\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bcff80a7-8826-5fa5-820b-fb90f43bf6dc@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260704T083000
+DTEND;TZID=America/Guayaquil:20260704T120000
+SUMMARY:Clase Presencial: Historia de los Pueblos
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Mario Chicaiza\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5640d9f9-46ec-5f1c-be16-e1f13cbcc2b3@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260704T130000
+DTEND;TZID=America/Guayaquil:20260704T163000
+SUMMARY:Clase Presencial: Cátedra Integradora
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Víctor Oquendo\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5ff56000-dd5a-5a21-84c7-738cc0141f81@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260718T083000
+DTEND;TZID=America/Guayaquil:20260718T120000
+SUMMARY:Clase Presencial: Pensamiento Social de la Iglesia
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Dunia Ojeda\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:69b9beb9-8bba-5f65-8402-41e55a2f2165@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260801T080000
+DTEND;TZID=America/Guayaquil:20260801T100000
+SUMMARY:EXAMEN PRESENCIAL: Historia de los Pueblos
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Mario Chicaiza\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7b686060-0b5d-508b-bdba-3fb85e5d19ca@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260801T103000
+DTEND;TZID=America/Guayaquil:20260801T123000
+SUMMARY:EXAMEN PRESENCIAL: Cátedra Integradora
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Víctor Oquendo\nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dbede410-e7fe-5977-a962-5b2fe0a562b3@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260801T140000
+DTEND;TZID=America/Guayaquil:20260801T153000
+SUMMARY:EXAMEN PRESENCIAL: Ética
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: \nCentro: Riobamba
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+END:VCALENDAR
