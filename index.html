@@ -608,6 +608,140 @@ function generarICS(nivel, centro) {
 
 // ── Componentes React ──
 
+
+function HorarioView({ centro, nivel, tab, setTab }) {
+  const zona = getZona(centro);
+  const materias = DATA.niveles[nivel]?.materias || [];
+
+  const bim1 = materias.filter(m => getMateriasBimestre(m, zona) === 1);
+  const bim2 = materias.filter(m => getMateriasBimestre(m, zona) === 2);
+  const semestral = materias.filter(m => getMateriasBimestre(m, zona) === 0);
+
+  const formatFecha = (f) => {
+    const d = new Date(f + "T12:00:00");
+    const dias = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+    const meses = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+    return `${dias[d.getDay()]} ${d.getDate()} ${meses[d.getMonth()]}`;
+  };
+
+  const isUpcoming = (f) => new Date(f) >= new Date(new Date().toDateString());
+
+  const renderMateria = (mat) => {
+    const bim = mat.bimestre[zona];
+    const docente = getDocente(mat, centro);
+    const tipoClase = mat.tipo === "por-confirmar" ? "day-por-confirmar" :
+                      mat.tipo === "semestral" ? "day-semestral" :
+                      mat.dia ? getDayClass(mat.dia.toLowerCase()) : "day-semestral";
+    const bimLabel = bim === 0 ? "semestral" : bim === 1 ? "bim1" : "bim2";
+    const enlace = mat.enlaces && (mat.enlaces[centro] || mat.enlaces["Todos los centros"]);
+
+    return (
+      <div key={mat.nombre} className={`schedule-row ${tipoClase}`}>
+        <div style={{flex:1}}>
+          <div style={{fontWeight:600,fontSize:"14px",marginBottom:2}}>{mat.corto}</div>
+          <div style={{fontSize:"12px",color:"#4a5568"}}>
+            {docente}
+            <span className={`badge badge-${bimLabel}`} style={{marginLeft:8}}>
+              {bim === 0 ? "Semestral" : bim === 1 ? "1er Bim" : "2do Bim"}
+            </span>
+          </div>
+        </div>
+        <div style={{textAlign:"right",minWidth:100}}>
+          {mat.dia && mat.hora ? (
+            <div>
+              <div style={{fontWeight:600,fontSize:"13px"}}>{mat.dia}</div>
+              <div style={{fontSize:"12px",color:"#718096"}}>{mat.hora}</div>
+              {enlace && <a href={enlace} target="_blank" rel="noopener noreferrer" style={{fontSize:"11px",color:"#3182ce"}}>Abrir ↗</a>}
+            </div>
+          ) : (
+            <div style={{fontSize:"12px",color:"#d69e2e",fontWeight:500}}>Por confirmar</div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  const renderFechas = () => {
+    const cal = DATA.calendario;
+    const allDates = [];
+
+    [["bim1", "1er Bimestre"], ["bim2", "2do Bimestre"]].forEach(([key, label]) => {
+      const bim = cal[key];
+      allDates.push({ fecha: bim.inicio, desc: `Inicio ${label}`, tipo: "inicio" });
+      bim.entregas.forEach(e => allDates.push({ fecha: e.fecha, desc: `Entrega Act. ${e.num} — ${label}`, tipo: "entrega" }));
+      bim.examenes.forEach(e => allDates.push({ fecha: e, desc: `Examen Final — ${label}`, tipo: "examen" }));
+      bim.recuperacion.forEach(e => allDates.push({ fecha: e, desc: `Recuperación — ${label}`, tipo: "examen" }));
+    });
+
+    allDates.sort((a, b) => a.fecha.localeCompare(b.fecha));
+
+    return allDates.map((d, i) => (
+      <div key={i} className={`date-card ${d.tipo === "examen" ? "exam" : isUpcoming(d.fecha) ? "upcoming" : ""}`}>
+        <div>
+          <div style={{fontWeight:500,fontSize:"13px"}}>{d.desc}</div>
+        </div>
+        <div style={{fontSize:"13px",fontWeight:600,color: d.tipo === "examen" ? "#e53e3e" : "#2d3748"}}>
+          {formatFecha(d.fecha)}
+        </div>
+      </div>
+    ));
+  };
+
+  return (
+    <div>
+      <div className="tab-bar">
+        <button className={`tab ${tab === "horario" ? "active" : ""}`} onClick={() => setTab("horario")}>Horario</button>
+        <button className={`tab ${tab === "fechas" ? "active" : ""}`} onClick={() => setTab("fechas")}>Fechas Importantes</button>
+      </div>
+
+      {tab === "horario" && (
+        <div>
+          {bim2.some(m => m.tipo === "por-confirmar") && (
+            <div className="aviso-bim2">
+              <span>Las materias del 2do bimestre aún no tienen horario confirmado de clases sincrónicas. Se actualizará cuando esté disponible.</span>
+            </div>
+          )}
+
+          {bim1.length > 0 && (
+            <div className="card">
+              <h3 style={{fontSize:"15px",fontWeight:600,marginBottom:12,color:"#2a4365"}}>1er Bimestre</h3>
+              {bim1.map(renderMateria)}
+            </div>
+          )}
+
+          {bim2.length > 0 && (
+            <div className="card">
+              <h3 style={{fontSize:"15px",fontWeight:600,marginBottom:12,color:"#744210"}}>2do Bimestre</h3>
+              {bim2.map(renderMateria)}
+            </div>
+          )}
+
+          {semestral.length > 0 && (
+            <div className="card">
+              <h3 style={{fontSize:"15px",fontWeight:600,marginBottom:12,color:"#22543d"}}>Todo el Semestre</h3>
+              {semestral.map(renderMateria)}
+            </div>
+          )}
+
+          <div style={{textAlign:"center",marginTop:16}}>
+            <button className="btn-export" onClick={() => generarICS(nivel, centro)}>
+              Exportar a Google Calendar (.ics)
+            </button>
+          </div>
+        </div>
+      )}
+
+      {tab === "fechas" && (
+        <div className="card">
+          <h3 style={{fontSize:"15px",fontWeight:600,marginBottom:12}}>Calendario Académico</h3>
+          {renderFechas()}
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 // ── Generar tabla plana para Admin ──
 
 function generarTablaAdmin() {
@@ -692,7 +826,7 @@ function AdminLogin({ onBack, onLogin }) {
         <p style={{fontSize:"13px",color:"#718096",marginBottom:20}}>Ingresa tus credenciales para acceder</p>
         <form onSubmit={handleLogin}>
           <input type="text" placeholder="Usuario" value={user} onChange={e => setUser(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:10,fontSize:14,fontFamily:"Inter,sans-serif"}} />
-          <input type="password" placeholder="Contraseña" value={pass} onChange={e => setPass(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:16,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+          <input type="password" placeholder="Contrase\u00f1a" value={pass} onChange={e => setPass(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:16,fontSize:14,fontFamily:"Inter,sans-serif"}} />
           {error && <div style={{color:"#e53e3e",fontSize:13,marginBottom:12}}>Usuario o contraseña incorrectos</div>}
           <button type="submit" style={{width:"100%",padding:"12px",background:"#2d3748",color:"white",border:"none",borderRadius:8,fontSize:14,fontWeight:600,cursor:"pointer",fontFamily:"Inter,sans-serif"}}>Ingresar</button>
         </form>
