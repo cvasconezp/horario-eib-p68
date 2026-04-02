@@ -1,0 +1,932 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EIB UPS//Horario P68//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/Guayaquil
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0500
+DTSTART:19700101T000000
+TZNAME:ECT
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:83382b93-bc9e-5644-b074-03e58e8e4312@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260404T170000
+DTEND;TZID=America/Guayaquil:20260404T183000
+SUMMARY:Política y Legislación Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a5b73d0f-a25c-5954-8f42-4f33ab90114e@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260406T170000
+DTEND;TZID=America/Guayaquil:20260406T183000
+SUMMARY:Política y Legislación Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2f535470-7265-56dc-98f9-3ef3553d11d7@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260413T170000
+DTEND;TZID=America/Guayaquil:20260413T183000
+SUMMARY:Política y Legislación Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fc17bff2-e315-5c7b-81ff-a9553e14b6df@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260420T170000
+DTEND;TZID=America/Guayaquil:20260420T183000
+SUMMARY:Política y Legislación Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5de8b463-830d-5b2f-a117-c1d13999154e@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260427T170000
+DTEND;TZID=America/Guayaquil:20260427T183000
+SUMMARY:Política y Legislación Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a791233c-fe04-5509-8524-abeedaa4bd12@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260511T170000
+DTEND;TZID=America/Guayaquil:20260511T183000
+SUMMARY:Política y Legislación Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6ead93ea-06bd-560d-b26f-e4e696954b4d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260518T170000
+DTEND;TZID=America/Guayaquil:20260518T183000
+SUMMARY:Política y Legislación Educativa (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d925b410-fd32-509d-8b09-a4cc5a8876c8@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260525T170000
+DTEND;TZID=America/Guayaquil:20260525T183000
+SUMMARY:Política y Legislación Educativa (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Política y Legislación Educativa
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bfa51bc9-6a6f-5e26-80ec-51f6dd9b6518@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260404T183000
+DTEND;TZID=America/Guayaquil:20260404T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:3501554d-165d-5422-acdd-0537edc3d294@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260406T183000
+DTEND;TZID=America/Guayaquil:20260406T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d5fe4a82-d440-5ecb-ab26-9962d253ceb1@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260413T183000
+DTEND;TZID=America/Guayaquil:20260413T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1a7ded5a-86fc-51e7-8b57-8fa2fa1fa1f8@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260420T183000
+DTEND;TZID=America/Guayaquil:20260420T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:437fc42a-8963-5a85-aa1a-3b5d0bac6afe@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260427T183000
+DTEND;TZID=America/Guayaquil:20260427T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a1e6edcc-8188-54f7-af64-abee1d82cd5b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260511T183000
+DTEND;TZID=America/Guayaquil:20260511T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:052fc680-b232-51e4-8f18-77f3d65f8330@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260518T183000
+DTEND;TZID=America/Guayaquil:20260518T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:87730004-9be4-55a7-aaa8-69176af0342f@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260525T183000
+DTEND;TZID=America/Guayaquil:20260525T200000
+SUMMARY:Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:68426158-5240-5ea7-8074-2d529a651903@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260407T170000
+DTEND;TZID=America/Guayaquil:20260407T183000
+SUMMARY:Profesión e identidad docente (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a0f25171-8bbf-52d5-b339-026d92c09bf3@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260414T170000
+DTEND;TZID=America/Guayaquil:20260414T183000
+SUMMARY:Profesión e identidad docente (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8aa3ee78-f562-5f05-a7ff-c35f6f6edab2@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260421T170000
+DTEND;TZID=America/Guayaquil:20260421T183000
+SUMMARY:Profesión e identidad docente (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b894d90f-7841-5e99-aa09-e7b78b505980@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260428T170000
+DTEND;TZID=America/Guayaquil:20260428T183000
+SUMMARY:Profesión e identidad docente (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:54f76357-e653-5658-82e1-7722e200a23c@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260505T170000
+DTEND;TZID=America/Guayaquil:20260505T183000
+SUMMARY:Profesión e identidad docente (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1cf540e4-a429-54d0-a1b9-7b0798994779@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260512T170000
+DTEND;TZID=America/Guayaquil:20260512T183000
+SUMMARY:Profesión e identidad docente (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:440e46f4-d585-5106-b894-bc2227ca06c1@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260519T170000
+DTEND;TZID=America/Guayaquil:20260519T183000
+SUMMARY:Profesión e identidad docente (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ccaaad8a-e843-513b-92fa-37da0c0f047f@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260526T170000
+DTEND;TZID=America/Guayaquil:20260526T183000
+SUMMARY:Profesión e identidad docente (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Profesión e identidad docente
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:274cd8e0-be0d-5fc3-8639-206dacf5df56@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260407T183000
+DTEND;TZID=America/Guayaquil:20260407T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b1acbce5-cf1e-566c-9f35-21f3c8b3292d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260414T183000
+DTEND;TZID=America/Guayaquil:20260414T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8d1a1710-dd1f-583d-a6dc-2ce4031f833a@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260421T183000
+DTEND;TZID=America/Guayaquil:20260421T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:482d5ef8-9c2b-5673-a37c-e2bd6c7d43c7@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260428T183000
+DTEND;TZID=America/Guayaquil:20260428T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:79f713e2-b1a6-5fd8-8665-b819c12b46df@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260505T183000
+DTEND;TZID=America/Guayaquil:20260505T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20e58974-5042-5196-8945-964e9efbfc50@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260512T183000
+DTEND;TZID=America/Guayaquil:20260512T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:869272dc-2dfd-5170-a28e-f8f1b1e42447@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260519T183000
+DTEND;TZID=America/Guayaquil:20260519T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6b891871-c1bd-53b2-985d-60c1f4ace1bc@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260526T183000
+DTEND;TZID=America/Guayaquil:20260526T200000
+SUMMARY:Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:27d49228-ee17-5c48-8b89-875e901af6ad@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260409T170000
+DTEND;TZID=America/Guayaquil:20260409T183000
+SUMMARY:Lengua indígena V (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena V
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:984a79fb-fddc-5738-b8c2-f3c136158180@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260423T170000
+DTEND;TZID=America/Guayaquil:20260423T183000
+SUMMARY:Lengua indígena V (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena V
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:65a1a756-a694-5795-b60e-13c5320dea99@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260507T170000
+DTEND;TZID=America/Guayaquil:20260507T183000
+SUMMARY:Lengua indígena V (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena V
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ad990632-4f0a-5b80-9074-f649867d90a4@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260521T170000
+DTEND;TZID=America/Guayaquil:20260521T183000
+SUMMARY:Lengua indígena V (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena V
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:63e9c39c-f211-53d1-8004-aaea0b204c59@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260419
+DTEND;VALUE=DATE:20260420
+SUMMARY:Entrega 1 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 1 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b5b60e06-9935-5aea-8487-abef5e9a2469@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260503
+DTEND;VALUE=DATE:20260504
+SUMMARY:Entrega 2 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 2 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e545efe7-4ea2-5d43-92d2-deabcbbb1ab1@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260517
+DTEND;VALUE=DATE:20260518
+SUMMARY:Entrega 3 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 3 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8af1ccd3-50c8-535a-b5b0-0f08fe1bf323@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260529
+DTEND;VALUE=DATE:20260530
+SUMMARY:Entrega 4 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 4 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:070e6ce2-0d8b-545b-a7b1-c66aff4ddc27@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:Entrega 1 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 1 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e10d38a2-2ff1-573e-adec-f0e125b64185@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260705
+DTEND;VALUE=DATE:20260706
+SUMMARY:Entrega 2 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 2 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f4cc8f49-fc61-5a53-b6d3-6433cf893b5b@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260719
+DTEND;VALUE=DATE:20260720
+SUMMARY:Entrega 3 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 3 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:4ddc6980-5de0-525e-b39d-47d64659a206@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Entrega 4 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 4 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:167e84a6-76cb-54ba-9855-b1c8cc9c6899@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260530
+DTEND;VALUE=DATE:20260531
+SUMMARY:Examen (BIM1)
+DESCRIPTION:Día de examen para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:84088ec4-2a67-5213-9736-022ed156eb4e@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:Examen (BIM1)
+DESCRIPTION:Día de examen para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a18881bf-7ac7-522a-b033-87a21c527ae7@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260802
+SUMMARY:Examen (BIM2)
+DESCRIPTION:Día de examen para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bbdc4abb-7e78-574d-91be-87267b356a40@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260802
+DTEND;VALUE=DATE:20260803
+SUMMARY:Examen (BIM2)
+DESCRIPTION:Día de examen para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:626a5830-5d47-50f4-9ed1-996d716df7c9@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+SUMMARY:Examen de Recuperación (BIM1)
+DESCRIPTION:Examen de recuperación para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fd9afdcd-692d-5344-8a2e-9b4a0de0f30e@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:Examen de Recuperación (BIM1)
+DESCRIPTION:Examen de recuperación para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:235a4453-796c-5d5a-99a9-c783d7010fb8@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260808
+DTEND;VALUE=DATE:20260809
+SUMMARY:Examen de Recuperación (BIM2)
+DESCRIPTION:Examen de recuperación para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5fc62332-7ee2-5c9b-8c77-7bf0764b2a6f@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260809
+DTEND;VALUE=DATE:20260810
+SUMMARY:Examen de Recuperación (BIM2)
+DESCRIPTION:Examen de recuperación para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ede62ab5-c962-572e-9fc6-934fa68d0532@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260411T083000
+DTEND;TZID=America/Guayaquil:20260411T120000
+SUMMARY:Clase Presencial: Metodología Investigación IV
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Jéniffer Carrillo\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6b9de1f0-cd4c-5931-b85a-188d3b9995eb@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260425T083000
+DTEND;TZID=America/Guayaquil:20260425T120000
+SUMMARY:Clase Presencial: Lengua Indígena V
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Aurora Iza\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e34d8032-a822-5e3f-913b-df29d494ab27@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260425T130000
+DTEND;TZID=America/Guayaquil:20260425T163000
+SUMMARY:Clase Presencial: Metodología Investigación IV
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Jéniffer Carrillo\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:416111e0-e31a-5e52-8f68-2a11ba29c983@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260426T083000
+DTEND;TZID=America/Guayaquil:20260426T120000
+SUMMARY:Clase Presencial: Profesión e Identidad Docente
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Azucena Bastidas\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dfdff8d5-e083-5121-af63-3477ccab7281@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260516T083000
+DTEND;TZID=America/Guayaquil:20260516T120000
+SUMMARY:Clase Presencial: Profesión e Identidad Docente
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Azucena Bastidas\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:70f46977-ba8e-5d16-bfda-30d4be93092e@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260530T083000
+DTEND;TZID=America/Guayaquil:20260530T103000
+SUMMARY:EXAMEN PRESENCIAL: Metodología Investigación IV
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Jéniffer Carrillo\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f441726f-6d2b-56c1-877b-f17056e9ea45@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260530T103000
+DTEND;TZID=America/Guayaquil:20260530T123000
+SUMMARY:EXAMEN PRESENCIAL: Profesión e Identidad Docente
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Azucena Bastidas\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:24254cba-780b-50e3-aaf4-58ee3578faae@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260613T083000
+DTEND;TZID=America/Guayaquil:20260613T120000
+SUMMARY:Clase Presencial: Lengua Indígena V
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Aurora Iza\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f182110b-3993-5aa7-bdba-7a2a80049b6a@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260613T130000
+DTEND;TZID=America/Guayaquil:20260613T163000
+SUMMARY:Clase Presencial: Política y Legislación Educativa
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Jéniffer Carrillo\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e8a98d42-8a63-5bcb-ab47-234d60d3dc0a@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260704T083000
+DTEND;TZID=America/Guayaquil:20260704T120000
+SUMMARY:Clase Presencial: Lengua Indígena V
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Aurora Iza\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:85a58763-2a11-578e-a502-9726c9c95ecd@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260704T130000
+DTEND;TZID=America/Guayaquil:20260704T163000
+SUMMARY:Clase Presencial: Política y Legislación Educativa
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Jéniffer Carrillo\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:57cf5914-f689-5bf2-a9a2-87c61debf04e@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260801T083000
+DTEND;TZID=America/Guayaquil:20260801T103000
+SUMMARY:EXAMEN PRESENCIAL: Política y Legislación Educativa
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Jéniffer Carrillo\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:28b5ce17-6821-594b-b7fc-3d49e005a40b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260802T083000
+DTEND;TZID=America/Guayaquil:20260802T103000
+SUMMARY:EXAMEN PRESENCIAL: Lengua Indígena V
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Aurora Iza\nCentro: Latacunga
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+END:VCALENDAR
