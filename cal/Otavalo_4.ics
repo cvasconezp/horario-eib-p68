@@ -1,0 +1,864 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EIB UPS//Horario P68//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/Guayaquil
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0500
+DTSTART:19700101T000000
+TZNAME:ECT
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:b1415172-c87d-567c-b06e-0c1fb699e45f@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260404T170000
+DTEND;TZID=America/Guayaquil:20260404T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:62f3e24d-f604-5067-862a-cf540735e316@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260406T170000
+DTEND;TZID=America/Guayaquil:20260406T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:3865442f-1e7d-56a0-a9a0-f682582ef460@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260413T170000
+DTEND;TZID=America/Guayaquil:20260413T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:14af74da-6f2a-50a9-aa34-d1f59b870238@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260420T170000
+DTEND;TZID=America/Guayaquil:20260420T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:42a00687-bba6-54be-be07-477f241412e1@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260427T170000
+DTEND;TZID=America/Guayaquil:20260427T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7526265e-78e2-5c80-a530-47b9b0d08a35@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260511T170000
+DTEND;TZID=America/Guayaquil:20260511T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:9c8bf331-5460-5bf8-9f74-0f7264adc28f@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260518T170000
+DTEND;TZID=America/Guayaquil:20260518T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:abb9bc79-1dbb-5fc1-8290-cb5cc62c14f5@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260525T170000
+DTEND;TZID=America/Guayaquil:20260525T183000
+SUMMARY:Matemática y su Didáctica con Enfoque Intercultural (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Matemática y su Didáctica con Enfoque Intercultural
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a2f68c4f-75ee-5516-98e5-c3135c768f43@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260407T170000
+DTEND;TZID=America/Guayaquil:20260407T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:4b42753d-f5d4-5325-b009-12623150882b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260414T170000
+DTEND;TZID=America/Guayaquil:20260414T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:53d414e6-f204-58e0-b895-439f52dec38d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260421T170000
+DTEND;TZID=America/Guayaquil:20260421T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b00462a6-a2ed-5a34-978c-a3da38eb863b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260428T170000
+DTEND;TZID=America/Guayaquil:20260428T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2b3db654-6976-527d-8d1c-96ac90d712ac@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260505T170000
+DTEND;TZID=America/Guayaquil:20260505T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:377d5c3c-8703-5efa-a6e9-3ffbdbccd01e@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260512T170000
+DTEND;TZID=America/Guayaquil:20260512T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:4cab7c93-723b-51d3-a1a2-62803ba68bb6@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260519T170000
+DTEND;TZID=America/Guayaquil:20260519T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2062f361-5f9b-51cd-bf12-963563d87908@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260526T170000
+DTEND;TZID=America/Guayaquil:20260526T183000
+SUMMARY:Cátedra Integradora: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Cátedra Integradora: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c6217c95-01c2-5a6a-a9ad-135c5b24ab08@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260407T183000
+DTEND;TZID=America/Guayaquil:20260407T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6d04c5af-3a7c-59a5-ab13-45371fe81a60@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260414T183000
+DTEND;TZID=America/Guayaquil:20260414T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:27f878cb-5f20-5a3e-ade4-bf9d39cc9087@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260421T183000
+DTEND;TZID=America/Guayaquil:20260421T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:16e16b97-ec7f-5b41-9e37-fcf7d8815e6d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260428T183000
+DTEND;TZID=America/Guayaquil:20260428T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0c9b5ec9-ba27-5cb7-adc5-efb19debf56d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260505T183000
+DTEND;TZID=America/Guayaquil:20260505T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:3ad2712e-7d06-5382-b8c4-66f421146e1b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260512T183000
+DTEND;TZID=America/Guayaquil:20260512T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:79708c12-ee08-5091-86a4-446eebed074b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260519T183000
+DTEND;TZID=America/Guayaquil:20260519T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8da22bd3-5c2f-5f7a-9baa-12c498611427@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260526T183000
+DTEND;TZID=America/Guayaquil:20260526T200000
+SUMMARY:Práctica preprofesional: Modelos Pedagógicos y Curriculares (tutoria)
+DESCRIPTION:Clase en línea
+Tipo: tutoria
+Sujeto: Práctica preprofesional: Modelos Pedagógicos y Curriculares
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b23c3d04-9695-520d-9a0c-9c9a96ce243d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260409T170000
+DTEND;TZID=America/Guayaquil:20260409T183000
+SUMMARY:Lengua indígena I (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena I
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fd4e1579-b8c8-5008-92bb-856a880db1ae@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260423T170000
+DTEND;TZID=America/Guayaquil:20260423T183000
+SUMMARY:Lengua indígena I (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena I
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:71fc30c1-39a4-5f66-b8ba-f12fda199aeb@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260507T170000
+DTEND;TZID=America/Guayaquil:20260507T183000
+SUMMARY:Lengua indígena I (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena I
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c0f0dc1a-06d2-5d43-bb92-b61c462b390b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260521T170000
+DTEND;TZID=America/Guayaquil:20260521T183000
+SUMMARY:Lengua indígena I (clase)
+DESCRIPTION:Clase en línea
+Tipo: clase
+Sujeto: Lengua indígena I
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:9083a973-0edc-59d1-98ac-0a097b4c56b2@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260419
+DTEND;VALUE=DATE:20260420
+SUMMARY:Entrega 1 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 1 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5efc522f-11e5-5855-8075-a59c1aa9d88c@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260503
+DTEND;VALUE=DATE:20260504
+SUMMARY:Entrega 2 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 2 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a067aa73-730e-5fae-aa6e-422b55dbf580@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260517
+DTEND;VALUE=DATE:20260518
+SUMMARY:Entrega 3 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 3 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8a79882c-c4f6-518f-95bc-c78d90a068cd@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260529
+DTEND;VALUE=DATE:20260530
+SUMMARY:Entrega 4 (BIM1)
+DESCRIPTION:Fecha límite para la entrega 4 del bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c0418524-5dee-588e-a17e-14573a260422@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:Entrega 1 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 1 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a2a3763c-2171-5f9e-9aa3-235d0db53434@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260705
+DTEND;VALUE=DATE:20260706
+SUMMARY:Entrega 2 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 2 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b7b14eac-e007-5aff-9a1b-9a7d010eb4a5@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260719
+DTEND;VALUE=DATE:20260720
+SUMMARY:Entrega 3 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 3 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ac40c3dd-4792-5d74-a12d-16fdde641df1@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Entrega 4 (BIM2)
+DESCRIPTION:Fecha límite para la entrega 4 del bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:51b71ee6-9730-5baf-91b8-24ebf6a889f2@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260530
+DTEND;VALUE=DATE:20260531
+SUMMARY:Examen (BIM1)
+DESCRIPTION:Día de examen para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:55a534cc-9d76-5539-92d3-d531dd53c847@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:Examen (BIM1)
+DESCRIPTION:Día de examen para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ba63633f-6cf4-5f67-b6e9-533a77d46e70@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260802
+SUMMARY:Examen (BIM2)
+DESCRIPTION:Día de examen para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:3be256dc-c888-525c-9759-5e487e2f5268@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260802
+DTEND;VALUE=DATE:20260803
+SUMMARY:Examen (BIM2)
+DESCRIPTION:Día de examen para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7c4c3348-25f3-5505-9594-a5ba42dd463e@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+SUMMARY:Examen de Recuperación (BIM1)
+DESCRIPTION:Examen de recuperación para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:26243ed5-8486-5705-b79c-6f7298c4e261@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:Examen de Recuperación (BIM1)
+DESCRIPTION:Examen de recuperación para el bim1
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a7993ce4-f564-5efc-bd27-c01865353c98@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260808
+DTEND;VALUE=DATE:20260809
+SUMMARY:Examen de Recuperación (BIM2)
+DESCRIPTION:Examen de recuperación para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5f6f7fd1-a061-5c9c-8927-e0879bb879c8@ups-eib.edu.ec
+DTSTART;VALUE=DATE:20260809
+DTEND;VALUE=DATE:20260810
+SUMMARY:Examen de Recuperación (BIM2)
+DESCRIPTION:Examen de recuperación para el bim2
+DTSTAMP:20260402T233812Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1440M
+DESCRIPTION:Recordatorio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8c355a12-0ee1-57e6-8816-16b2df1eb069@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260418T083000
+DTEND;TZID=America/Guayaquil:20260418T123000
+SUMMARY:Clase Presencial: Cátedra Integradora: Modelos Pedagógicos
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Patricia Raygoza\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2304bce1-c1fc-5600-ae99-338364d5f52c@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260418T133000
+DTEND;TZID=America/Guayaquil:20260418T173000
+SUMMARY:Clase Presencial: Lengua Indígena I
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Soledad Guzmán\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:27e5b498-947d-5cb7-9eec-1f65378aeee9@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260419T083000
+DTEND;TZID=America/Guayaquil:20260419T123000
+SUMMARY:Clase Presencial: Práctica Preprofesional: Modelos Pedagógicos
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Azucena Bastidas\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d3bd28c4-ac8f-53f1-889d-018e0f5bcae4@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260516T083000
+DTEND;TZID=America/Guayaquil:20260516T123000
+SUMMARY:Clase Presencial: Cátedra Integradora: Modelos Pedagógicos
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Patricia Raygoza\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7d3fd547-6716-5d46-beaf-3c5cc34d82aa@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260517T083000
+DTEND;TZID=America/Guayaquil:20260517T123000
+SUMMARY:Clase Presencial: Lengua Indígena I
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Soledad Guzmán\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:941aac15-e878-5100-8e29-9316c6d2a7b7@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260530T083000
+DTEND;TZID=America/Guayaquil:20260530T103000
+SUMMARY:EXAMEN PRESENCIAL: Cátedra Integradora: Modelos Pedagógicos
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Patricia Raygoza\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e919662c-1af0-531c-979d-9f546ffeea6b@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260530T103000
+DTEND;TZID=America/Guayaquil:20260530T123000
+SUMMARY:EXAMEN PRESENCIAL: Práctica Preprofesional: Modelos Pedagógicos
+DESCRIPTION:Encuentro presencial - 1er Bimestre\nDocente: Azucena Bastidas\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:30639107-faa2-56f2-8693-69ede833598a@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260613T083000
+DTEND;TZID=America/Guayaquil:20260613T123000
+SUMMARY:Clase Presencial: Matemática y su Didáctica
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Héctor Cárdenas\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2c24de9c-72dd-5afe-ac1b-2e6b5089ba44@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260613T133000
+DTEND;TZID=America/Guayaquil:20260613T173000
+SUMMARY:Clase Presencial: Currículo y Planificación Educativa
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Patricia Raygoza\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6448752e-d740-5b25-9ee8-dc3c2a898e6d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260614T083000
+DTEND;TZID=America/Guayaquil:20260614T123000
+SUMMARY:Clase Presencial: Lengua Indígena I
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Soledad Guzmán\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c47865e0-92ca-592e-b8a2-bd51d4af7a17@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260711T083000
+DTEND;TZID=America/Guayaquil:20260711T123000
+SUMMARY:Clase Presencial: Matemática y su Didáctica
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Héctor Cárdenas\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7d401141-9a00-50c4-92db-b865a9fc8cc2@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260711T133000
+DTEND;TZID=America/Guayaquil:20260711T173000
+SUMMARY:Clase Presencial: Currículo y Planificación Educativa
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Patricia Raygoza\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0eff8faf-a487-55f7-910f-c2ff742ea86d@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260725T083000
+DTEND;TZID=America/Guayaquil:20260725T123000
+SUMMARY:Clase Presencial: Pensamiento Social de la Iglesia
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Dunia Ojeda\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: Clase Presencial manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1114545e-aaf8-595c-b335-5292544f1ec2@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260801T083000
+DTEND;TZID=America/Guayaquil:20260801T103000
+SUMMARY:EXAMEN PRESENCIAL: Matemática y su Didáctica
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Héctor Cárdenas\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fd8aeef0-2f0e-5505-8ce2-7c0c48497661@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260801T103000
+DTEND;TZID=America/Guayaquil:20260801T123000
+SUMMARY:EXAMEN PRESENCIAL: Currículo y Planificación Educativa
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Patricia Raygoza\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:61569ac3-1503-533a-a3f0-a67183933332@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260801T133000
+DTEND;TZID=America/Guayaquil:20260801T153000
+SUMMARY:EXAMEN PRESENCIAL: Pensamiento Social de la Iglesia
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: \nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a5b06d9a-8347-5cb9-a171-b77817010496@ups-eib.edu.ec
+DTSTART;TZID=America/Guayaquil:20260802T080000
+DTEND;TZID=America/Guayaquil:20260802T100000
+SUMMARY:EXAMEN PRESENCIAL: Lengua Indígena I
+DESCRIPTION:Encuentro presencial - 2do Bimestre\nDocente: Soledad Guzmán\nCentro: Otavalo
+DTSTAMP:20260402T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Recordatorio: EXAMEN PRESENCIAL manana
+END:VALARM
+END:VEVENT
+END:VCALENDAR
