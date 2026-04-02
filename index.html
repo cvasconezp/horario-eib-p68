@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horario EIB en Línea - Período 68</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f0f4f8; color: #1a202c; }
+  .fade-in { animation: fadeIn 0.3s ease-in; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .card { background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 16px; }
+  .btn { padding: 10px 20px; border-radius: 8px; border: 2px solid #e2e8f0; background: white; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+  .btn:hover { border-color: #3182ce; color: #3182ce; }
+  .btn.active { background: #3182ce; color: white; border-color: #3182ce; }
+  .btn-export { background: #38a169; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+  .btn-export:hover { background: #2f855a; }
+  .schedule-row { display: flex; align-items: center; padding: 14px 16px; border-radius: 10px; margin-bottom: 8px; border-left: 4px solid; transition: transform 0.15s; }
+  .schedule-row:hover { transform: translateX(4px); }
+  .day-lunes { border-color: #4299e1; background: #ebf8ff; }
+  .day-martes { border-color: #9f7aea; background: #faf5ff; }
+  .day-miercoles { border-color: #ed8936; background: #fffaf0; }
+  .day-jueves { border-color: #48bb78; background: #f0fff4; }
+  .day-viernes { border-color: #ed8936; background: #fffaf0; }
+  .day-semestral { border-color: #718096; background: #f7fafc; }
+  .day-por-confirmar { border-color: #ecc94b; background: #fffff0; }
+  .aviso-bim2 { background: #fffff0; border: 1px solid #ecc94b; border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #744210; line-height: 1.5; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-bim1 { background: #bee3f8; color: #2a4365; }
+  .badge-bim2 { background: #fefcbf; color: #744210; }
+  .badge-semestral { background: #c6f6d5; color: #22543d; }
+  .date-card { padding: 12px 16px; border-radius: 8px; background: #f7fafc; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+  .date-card.upcoming { background: #ebf8ff; border-left: 3px solid #3182ce; }
+  .date-card.exam { background: #fff5f5; border-left: 3px solid #e53e3e; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #2b6cb0 100%); color: white; padding: 32px 20px; text-align: center; margin-bottom: 24px; border-radius: 16px; }
+  .selector-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .tab-bar { display: flex; gap: 4px; background: #edf2f7; padding: 4px; border-radius: 10px; margin-bottom: 20px; }
+  .tab { flex: 1; text-align: center; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: 500; font-size: 14px; transition: all 0.2s; border: none; background: transparent; }
+  .tab.active { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); color: #2d3748; }
+  .tab:not(.active) { color: #718096; }
+  .tab:not(.active):hover { color: #4a5568; }
+  .empty-state { text-align: center; padding: 48px 20px; color: #a0aec0; }
+  .nota-box { background: #fffff0; border: 1px solid #ecc94b; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #744210; margin-bottom: 16px; }
+  /* Admin Panel */
+  .admin-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  .admin-header { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); color: white; padding: 24px 20px; text-align: center; margin-bottom: 20px; border-radius: 16px; }
+  .admin-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; align-items: center; }
+  .admin-filters input, .admin-filters select { padding: 8px 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 13px; font-family: 'Inter', sans-serif; background: white; }
+  .admin-filters input:focus, .admin-filters select:focus { outline: none; border-color: #3182ce; box-shadow: 0 0 0 3px rgba(49,130,206,0.1); }
+  .admin-filters input { flex: 1; min-width: 200px; }
+  .admin-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+  .admin-table thead th { background: #edf2f7; padding: 10px 12px; text-align: left; font-weight: 600; color: #4a5568; position: sticky; top: 0; border-bottom: 2px solid #e2e8f0; white-space: nowrap; }
+  .admin-table tbody td { padding: 10px 12px; border-bottom: 1px solid #edf2f7; vertical-align: middle; }
+  .admin-table tbody tr:hover { background: #f7fafc; }
+  .admin-table tbody tr.highlighted { background: #ebf8ff; }
+  .btn-copy { background: #edf2f7; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 12px; font-family: 'Inter', sans-serif; color: #4a5568; transition: all 0.15s; white-space: nowrap; }
+  .btn-copy:hover { background: #e2e8f0; }
+  .btn-copy.copied { background: #c6f6d5; color: #22543d; }
+  .btn-admin-toggle { background: none; border: none; color: rgba(255,255,255,0.5); font-size: 12px; cursor: pointer; margin-top: 8px; font-family: 'Inter', sans-serif; }
+  .btn-admin-toggle:hover { color: rgba(255,255,255,0.8); }
+  .btn-back { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-family: 'Inter', sans-serif; }
+  .btn-back:hover { background: rgba(255,255,255,0.1); }
+  .whatsapp-preview { background: #dcf8c6; border-radius: 8px; padding: 10px 14px; font-size: 13px; margin-top: 6px; line-height: 1.5; font-family: 'Inter', sans-serif; max-width: 500px; white-space: pre-wrap; word-break: break-word; }
+  .admin-stat { display: inline-flex; align-items: center; gap: 6px; background: white; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; color: #4a5568; }
+  @media (max-width: 640px) {
+    .container { padding: 12px; }
+    .admin-container { padding: 12px; }
+    .admin-table { font-size: 11px; }
+    .admin-table thead th, .admin-table tbody td { padding: 6px 8px; }
+    .header { padding: 24px 16px; }
+    .selector-grid { gap: 6px; }
+    .btn { padding: 8px 14px; font-size: 13px; }
+    .schedule-row { flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+// ╔══════════════════════════════════════════════════════════════════╗
+// ║  DATOS EDITABLES — Para cambios manuales, modifica esta sección ║
+// ╚══════════════════════════════════════════════════════════════════╝
+
+const DATA = {
+  periodo: "68",
+  periodoLabel: "Marzo – Agosto 2026",
+
+  // Calendario general EIB
+  calendario: {
+    induccionLenguaIndigena: { fecha: "2026-04-04", nota: "Sábado 4 de abril, 8:30-12:30. Obligatoria para estudiantes de 4to nivel que toman Lengua Indígena I." },
+    inicioIngles: "2026-04-22",
+    bim1: {
+      inicio: "2026-04-06",
+      entregas: [
+        { num: 1, fecha: "2026-04-19" },
+        { num: 2, fecha: "2026-05-03" },
+        { num: 3, fecha: "2026-05-17" },
+        { num: 4, fecha: "2026-05-29" }
+      ],
+      examenes: ["2026-05-30", "2026-05-31"],
+      pasoNotas: { desde: "2026-06-01", hasta: "2026-06-06" },
+      recuperacion: ["2026-06-06", "2026-06-07"]
+    },
+    bim2: {
+      inicio: "2026-06-08",
+      entregas: [
+        { num: 1, fecha: "2026-06-21" },
+        { num: 2, fecha: "2026-07-05" },
+        { num: 3, fecha: "2026-07-19" },
+        { num: 4, fecha: "2026-07-31" }
+      ],
+      examenes: ["2026-08-01", "2026-08-02"],
+      pasoNotas: { desde: "2026-08-03", hasta: "2026-08-08" },
+      recuperacion: ["2026-08-08", "2026-08-09"]
+    }
+  },
+
+  // Centros disponibles por nivel
+  centrosPorNivel: {
+    2: ["Latacunga", "Cayambe", "Otavalo", "Riobamba"],
+    4: ["Latacunga", "Cayambe", "Otavalo", "Riobamba"],
+    6: ["Latacunga", "Cayambe", "Otavalo", "Riobamba"],
+    8: ["Latacunga", "Cayambe", "Otavalo", "Riobamba", "Amazonía Norte", "Wasakentsa"],
+    9: ["Todos los centros"]
+  },
+
+  // Zona de cada centro (para determinar bimestre)
+  // OC = Otavalo/Cayambe, RL = Riobamba/Latacunga, AN = Amazonía Norte, WK = Wasakentsa
+  zonas: {
+    "Otavalo": "OC", "Cayambe": "OC",
+    "Riobamba": "RL", "Latacunga": "RL",
+    "Amazonía Norte": "OC", // Same bimester distribution as OC
+    "Wasakentsa": "OC",
+    "Todos los centros": "OC"
+  },
+
+  // ══════════════════════════════════════
+  //   MATERIAS POR NIVEL
+  // ══════════════════════════════════════
+  niveles: {
+    2: {
+      nombre: "Segundo Nivel",
+      materias: [
+        {
+          nombre: "Práctica Preprofesional: Acercamiento a los Contextos y Sujetos de la Educación",
+          corto: "Práctica Preprofesional",
+          dia: "Lunes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 1 },
+          docentes: { Latacunga: "Pascale Laso", Cayambe: "Silvania Salazar", Otavalo: "Por confirmar", Riobamba: "Víctor Oquendo" },
+          enlaces: {}
+        },
+        {
+          nombre: "Comunicación Oral y Escrita II: Castellano",
+          corto: "Comunicación Oral y Escrita II",
+          dia: "Lunes", hora: "18:30", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 2, RL: 1 },
+          docentes: { Latacunga: "Hernán Hermosa", Cayambe: "Hernán Hermosa", Otavalo: "Hernán Hermosa", Riobamba: "Hernán Hermosa" },
+          enlaces: {}
+        },
+        {
+          nombre: "Metodología de la Investigación Educativa I: Aproximación y Descripción de la Realidad Educativa",
+          corto: "Metodología Investigación I",
+          dia: "Martes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 1 },
+          docentes: { Latacunga: "Por confirmar", Cayambe: "Por confirmar", Otavalo: "Guillermo Guato", Riobamba: "Guillermo Guato" },
+          enlaces: {}
+        },
+        {
+          nombre: "Cátedra Integradora: Aproximación a los Contextos y Sujetos de la Educación",
+          corto: "Cátedra Integradora",
+          dia: null, hora: null, duracion: null,
+          tipo: "por-confirmar",
+          bimestre: { OC: 2, RL: 2 },
+          docentes: { Latacunga: "Pascale Laso", Cayambe: "Silvania Salazar", Otavalo: "Por confirmar", Riobamba: "Víctor Oquendo" },
+          enlaces: {}
+        },
+        {
+          nombre: "Historia de los Pueblos y Nacionalidades Indígenas",
+          corto: "Historia de los Pueblos",
+          dia: null, hora: null, duracion: null,
+          tipo: "por-confirmar",
+          bimestre: { OC: 2, RL: 2 },
+          docentes: { Latacunga: "Mario Chicaiza", Cayambe: "Leonela Cucurela", Otavalo: "Leonela Cucurela", Riobamba: "Mario Chicaiza" },
+          enlaces: {}
+        },
+        {
+          nombre: "Ética",
+          corto: "Ética",
+          dia: null, hora: null, duracion: null,
+          tipo: "por-confirmar",
+          bimestre: { OC: 2, RL: 2 },
+          docentes: { Latacunga: "Área de Razón y Fe", Cayambe: "Área de Razón y Fe", Otavalo: "Área de Razón y Fe", Riobamba: "Área de Razón y Fe" },
+          enlaces: {}
+        },
+        {
+          nombre: "Inglés A1",
+          corto: "Inglés A1",
+          dia: "Miércoles y Viernes", hora: "18:30–20:30", duracion: 120,
+          tipo: "semestral",
+          tutoria: "Miércoles 16:00–17:00",
+          bimestre: { OC: 0, RL: 0 },
+          nota: "Inicio: 22 de abril de 2026",
+          docentes: { Latacunga: "Departamento de Idiomas", Cayambe: "Departamento de Idiomas", Otavalo: "Departamento de Idiomas", Riobamba: "Departamento de Idiomas" },
+          enlaces: {}
+        }
+      ]
+    },
+
+    4: {
+      nombre: "Cuarto Nivel",
+      materias: [
+        {
+          nombre: "Matemática y su Didáctica con Enfoque Intercultural",
+          corto: "Matemática y Didáctica",
+          dia: "Lunes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 2, RL: 1 },
+          docentes: { Latacunga: "Héctor Cárdenas", Cayambe: "Héctor Cárdenas", Otavalo: "Héctor Cárdenas", Riobamba: "Héctor Cárdenas" },
+          enlaces: {}
+        },
+        {
+          nombre: "Cátedra Integradora: Modelos Pedagógicos y Curriculares",
+          corto: "Cátedra Integradora",
+          dia: "Martes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 1 },
+          docentes: { Latacunga: "Gladys Castro", Cayambe: "Aurora Iza", Otavalo: "Patricia Raygoza", Riobamba: "Patricia Raygoza" },
+          enlaces: {}
+        },
+        {
+          nombre: "Práctica Preprofesional: Modelos Pedagógicos y Curriculares",
+          corto: "Práctica Preprofesional",
+          dia: "Martes", hora: "18:30", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 1 },
+          docentes: { Latacunga: "Gladys Castro", Cayambe: "Aurora Iza", Otavalo: "Azucena Bastidas", Riobamba: "Silvania Salazar" },
+          enlaces: {}
+        },
+        {
+          nombre: "Currículo y Planificación Educativa para EIB",
+          corto: "Currículo y Planificación",
+          dia: null, hora: null, duracion: null,
+          tipo: "por-confirmar",
+          bimestre: { OC: 2, RL: 2 },
+          docentes: { Latacunga: "Diana Guitarra", Cayambe: "Diana Guitarra", Otavalo: "Patricia Raygoza", Riobamba: "Patricia Raygoza" },
+          enlaces: {}
+        },
+        {
+          nombre: "Pensamiento Social de la Iglesia",
+          corto: "Pensamiento Social",
+          dia: null, hora: null, duracion: null,
+          tipo: "por-confirmar",
+          bimestre: { OC: 2, RL: 2 },
+          docentes: { Latacunga: "Área de Razón y Fe", Cayambe: "Área de Razón y Fe", Otavalo: "Área de Razón y Fe", Riobamba: "Área de Razón y Fe" },
+          enlaces: {}
+        },
+        {
+          nombre: "Lengua Indígena I",
+          corto: "Lengua Indígena I",
+          dia: "Jueves", hora: "17:00", duracion: 90,
+          tipo: "semestral",
+          bimestre: { OC: 0, RL: 0 },
+          nota: "Inducción obligatoria: sábado 4 de abril, 8:30–12:30",
+          docentes: { Latacunga: "Diana Guitarra", Cayambe: "Diana Guitarra", Otavalo: "Soledad Guzmán", Riobamba: "Soledad Guzmán" },
+          enlaces: {}
+        },
+        {
+          nombre: "Inglés B1",
+          corto: "Inglés B1",
+          dia: "Miércoles y Viernes", hora: "18:30–20:30", duracion: 120,
+          tipo: "semestral",
+          tutoria: "Miércoles 16:00–17:00",
+          bimestre: { OC: 0, RL: 0 },
+          nota: "Inicio: 22 de abril de 2026",
+          docentes: { Latacunga: "Departamento de Idiomas", Cayambe: "Departamento de Idiomas", Otavalo: "Departamento de Idiomas", Riobamba: "Departamento de Idiomas" },
+          enlaces: {}
+        }
+      ]
+    },
+
+    6: {
+      nombre: "Sexto Nivel",
+      materias: [
+        {
+          nombre: "Metodología de la Investigación Educativa II: Formulación de Proyectos de Investigación",
+          corto: "Metodología Investigación II",
+          dia: "Lunes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 2 },
+          docentes: { Latacunga: "Alejandra González", Cayambe: "Alejandra González", Otavalo: "Guillermo Guato", Riobamba: "Guillermo Guato" },
+          enlaces: {}
+        },
+        {
+          nombre: "Práctica Servicio Comunitario",
+          corto: "Práctica Servicio Comunitario",
+          dia: "Lunes", hora: "18:30", duracion: 90,
+          tipo: "semestral",
+          bimestre: { OC: 0, RL: 0 },
+          docentes: { Latacunga: "Pascale Laso", Cayambe: "Aurora Iza", Otavalo: "Pascale Laso", Riobamba: "Aurora Iza" },
+          enlaces: {}
+        },
+        {
+          nombre: "Ciencias Naturales y su Didáctica con Enfoque Intercultural",
+          corto: "Ciencias Naturales y Didáctica",
+          dia: "Martes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 1 },
+          docentes: { Latacunga: "Víctor Oquendo", Cayambe: "Teresa Vaca", Otavalo: "Teresa Vaca", Riobamba: "Víctor Oquendo" },
+          enlaces: {}
+        },
+        {
+          nombre: "Cátedra Integradora: Ambientes, Estrategias y Recursos Innovadores e Inclusivos",
+          corto: "Cátedra Integradora",
+          dia: "Martes", hora: "18:30", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 2, RL: 1 },
+          docentes: { Latacunga: "Alejandra González", Cayambe: "Jessica Villamar", Otavalo: "Alejandra González", Riobamba: "Jessica Villamar" },
+          enlaces: {}
+        },
+        {
+          nombre: "Bilingüismo y Revitalización Lingüística",
+          corto: "Bilingüismo",
+          dia: null, hora: null, duracion: null,
+          tipo: "por-confirmar",
+          bimestre: { OC: 2, RL: 2 },
+          docentes: { Latacunga: "Soledad Guzmán", Cayambe: "Catalina Alvarez", Otavalo: "Soledad Guzmán", Riobamba: "Catalina Alvarez" },
+          enlaces: {}
+        },
+        {
+          nombre: "Lengua Indígena III",
+          corto: "Lengua Indígena III",
+          dia: "Jueves", hora: "18:30", duracion: 90,
+          tipo: "semestral",
+          bimestre: { OC: 0, RL: 0 },
+          docentes: { Latacunga: "Soledad Guzmán", Cayambe: "Diana Guitarra", Otavalo: "Fernando Garcés", Riobamba: "Aurora Iza" },
+          enlaces: {}
+        }
+      ]
+    },
+
+    8: {
+      nombre: "Octavo Nivel",
+      materias: [
+        {
+          nombre: "Política y Legislación Educativa",
+          corto: "Política y Legislación",
+          dia: "Lunes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 2 },
+          docentes: { Latacunga: "Leonela Cucurela", Cayambe: "Catalina Alvarez", Otavalo: "Leonela Cucurela", Riobamba: "Por confirmar", "Amazonía Norte": "Catalina Alvarez", Wasakentsa: "Catalina Alvarez" },
+          enlaces: {}
+        },
+        {
+          nombre: "Integración Curricular: Propuesta de Intervención Educativa y Sistematización de la Práctica",
+          corto: "Integración Curricular",
+          dia: "Lunes", hora: "18:30", duracion: 90,
+          tipo: "semestral",
+          bimestre: { OC: 0, RL: 0 },
+          docentes: { Latacunga: "Patricia Raygoza", Cayambe: "Patricia Raygoza", Otavalo: "Guillermo Guato", Riobamba: "Guillermo Guato", "Amazonía Norte": "Pascale Laso", Wasakentsa: "Pascale Laso" },
+          enlaces: {}
+        },
+        {
+          nombre: "Profesión e Identidad Docente",
+          corto: "Profesión e Identidad",
+          dia: "Martes", hora: "17:00", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 2, RL: 1 },
+          docentes: { Latacunga: "Azucena Bastidas", Cayambe: "Diana Avila", Otavalo: "Azucena Bastidas", Riobamba: "Azucena Bastidas", "Amazonía Norte": "Diana Avila", Wasakentsa: "Diana Avila" },
+          enlaces: {}
+        },
+        {
+          nombre: "Metodología de la Investigación Educativa IV: Sistematización de la Información y Redacción del Informe",
+          corto: "Metodología Investigación IV",
+          dia: "Martes", hora: "18:30", duracion: 90,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 1 },
+          docentes: { Latacunga: "Por confirmar", Cayambe: "Mario Chicaiza", Otavalo: "Leonela Cucurela", Riobamba: "Leonela Cucurela", "Amazonía Norte": "Mario Chicaiza", Wasakentsa: "Mario Chicaiza" },
+          enlaces: {}
+        },
+        {
+          nombre: "Lengua Indígena V",
+          corto: "Lengua Indígena V",
+          dia: "Jueves", hora: "17:00", duracion: 90,
+          tipo: "semestral",
+          bimestre: { OC: 0, RL: 0 },
+          docentes: { Latacunga: "Aurora Iza", Cayambe: "Luis Montaluisa", Otavalo: "Fernando Garcés", Riobamba: "Luis Montaluisa", "Amazonía Norte": "Luis Montaluisa", Wasakentsa: "Soledad Guzmán (tutor local)" },
+          enlaces: {}
+        }
+      ]
+    },
+
+    9: {
+      nombre: "Plan de Contingencia (Malla Rediseño)",
+      materias: [
+        {
+          nombre: "Trabajo de Titulación II",
+          corto: "Trabajo de Titulación II",
+          dia: "Lunes", hora: "18:30", duracion: 90,
+          tipo: "semestral",
+          nota: "Sigue el horario de Integración Curricular (Ajuste)",
+          bimestre: { OC: 0, RL: 0 },
+          docentes: { "Todos los centros": "Patricia Raygoza" },
+          enlaces: {}
+        },
+        {
+          nombre: "Cátedra Integradora IX: Evaluación y Sistematización de la Práctica Educativa con Enfoque Intercultural",
+          corto: "Cátedra Integradora IX",
+          dia: null, hora: null, duracion: null,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 1, RL: 1 },
+          docentes: { "Todos los centros": "Jessica Villamar" },
+          enlaces: {}
+        },
+        {
+          nombre: "Ciencia, Tecnología y Sociedad",
+          corto: "Ciencia, Tecnología y Sociedad",
+          dia: null, hora: null, duracion: null,
+          tipo: "clase-tutoria",
+          bimestre: { OC: 2, RL: 2 },
+          docentes: { "Todos los centros": "Guillermo Guato" },
+          enlaces: {}
+        },
+        {
+          nombre: "Práctica IX: Propuesta de Intervención Educativa",
+          corto: "Práctica IX",
+          dia: null, hora: null, duracion: null,
+          tipo: "semestral",
+          bimestre: { OC: 0, RL: 0 },
+          docentes: { "Todos los centros": "Jessica Villamar" },
+          enlaces: {}
+        }
+      ]
+    }
+  }
+};
+
+// ╔══════════════════════════════════════════════════════════════════╗
+// ║  FIN DE DATOS EDITABLES                                         ║
+// ╚══════════════════════════════════════════════════════════════════╝
+
+
+// ── Utilidades ──
+
+function getZona(centro) {
+  return DATA.zonas[centro] || "OC";
+}
+
+function getMateriasBimestre(nivel, centro, bim) {
+  const zona = getZona(centro);
+  const materias = DATA.niveles[nivel]?.materias || [];
+  return materias.filter(m => {
+    const b = m.bimestre[zona];
+    if (bim === 0) return b === 0; // semestral
+    if (bim === 1) return b === 1;
+    if (bim === 2) return b === 2;
+    return false;
+  });
+}
+
+function getDocente(materia, centro) {
+  return materia.docentes[centro] || materia.docentes["Todos los centros"] || "Por confirmar";
+}
+
+function formatFecha(str) {
+  const d = new Date(str + "T12:00:00");
+  const dias = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+  const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  return `${dias[d.getDay()]} ${d.getDate()} de ${meses[d.getMonth()]}`;
+}
+
+function formatFechaCorta(str) {
+  const d = new Date(str + "T12:00:00");
+  const meses = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  return `${d.getDate()} ${meses[d.getMonth()]}`;
+}
+
+function getDayClass(dia, tipo) {
+  if (tipo === "por-confirmar") return "day-por-confirmar";
+  if (!dia) return "day-semestral";
+  const d = dia.toLowerCase();
+  if (d.includes("lunes")) return "day-lunes";
+  if (d.includes("martes")) return "day-martes";
+  if (d.includes("miércoles") || d.includes("viernes")) return "day-miercoles";
+  if (d.includes("jueves")) return "day-jueves";
+  return "day-semestral";
+}
+
+// ── Generador ICS ──
+
+function generarFechasClases(materia, bimNum) {
+  const bimData = bimNum === 1 ? DATA.calendario.bim1 : DATA.calendario.bim2;
+  const inicio = new Date(bimData.inicio + "T12:00:00");
+  const fechas = [];
+
+  if (!materia.dia || !materia.hora) return fechas;
+
+  const diasMap = { "Lunes": 1, "Martes": 2, "Miércoles": 3, "Jueves": 4, "Viernes": 5 };
+
+  // For multi-day subjects like Inglés
+  if (materia.dia.includes(" y ")) {
+    const partes = materia.dia.split(" y ");
+    partes.forEach(p => {
+      const diaNum = diasMap[p.trim()];
+      if (diaNum) {
+        let current = new Date(inicio);
+        current.setDate(current.getDate() + ((diaNum - current.getDay() + 7) % 7));
+        for (let i = 0; i < 8; i++) {
+          fechas.push(new Date(current));
+          current.setDate(current.getDate() + 7);
+        }
+      }
+    });
+    return fechas;
+  }
+
+  const diaNum = diasMap[materia.dia];
+  if (!diaNum) return fechas;
+
+  let current = new Date(inicio);
+  current.setDate(current.getDate() + ((diaNum - current.getDay() + 7) % 7));
+
+  const numWeeks = materia.tipo === "semestral" ? 8 : 8;
+  for (let i = 0; i < numWeeks; i++) {
+    fechas.push(new Date(current));
+    current.setDate(current.getDate() + 7);
+  }
+
+  return fechas;
+}
+
+function generarICS(nivel, centro) {
+  const zona = getZona(centro);
+  const materias = DATA.niveles[nivel]?.materias || [];
+  let events = [];
+
+  const addEvent = (titulo, fechaStr, horaInicio, durMin, descripcion) => {
+    const [h, m] = horaInicio.split(":").map(Number);
+    const d = new Date(fechaStr);
+    d.setHours(h, m, 0);
+    const endD = new Date(d.getTime() + durMin * 60000);
+    const fmt = (dt) => dt.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    events.push(
+      `BEGIN:VEVENT\nDTSTART:${fmt(d)}\nDTEND:${fmt(endD)}\nSUMMARY:${titulo}\nDESCRIPTION:${descripcion}\nEND:VEVENT`
+    );
+  };
+
+  // Agregar clases
+  materias.forEach(mat => {
+    const bim = mat.bimestre[zona];
+    const docente = getDocente(mat, centro);
+    if (!mat.dia || !mat.hora) return;
+
+    const horaBase = mat.hora.split("–")[0].split("-")[0].trim();
+    const dur = mat.duracion || 90;
+
+    if (bim === 0) {
+      // Semestral: ambos bimestres
+      [1, 2].forEach(b => {
+        const fechas = generarFechasClases(mat, b);
+        fechas.forEach(f => {
+          const fechaStr = f.toISOString().split("T")[0];
+          addEvent(`EIB: ${mat.corto}`, fechaStr, horaBase, dur, `Docente: ${docente}`);
+        });
+      });
+    } else {
+      const fechas = generarFechasClases(mat, bim);
+      fechas.forEach((f, i) => {
+        const fechaStr = f.toISOString().split("T")[0];
+        const tipoSesion = mat.tipo === "clase-tutoria" ? (i % 2 === 0 ? " (Clase)" : " (Tutoría)") : "";
+        addEvent(`EIB: ${mat.corto}${tipoSesion}`, fechaStr, horaBase, dur, `Docente: ${docente}`);
+      });
+    }
+  });
+
+  // Agregar entregas y exámenes
+  [DATA.calendario.bim1, DATA.calendario.bim2].forEach((bim, idx) => {
+    bim.entregas.forEach(e => {
+      addEvent(`EIB: Entrega Actividad ${e.num} (Bim ${idx+1})`, e.fecha, "23:00", 59, "Fecha límite de entrega");
+    });
+    bim.examenes.forEach(ex => {
+      addEvent(`EIB: Examen Final (Bim ${idx+1})`, ex, "08:00", 480, "Exámenes finales del bimestre");
+    });
+    bim.recuperacion.forEach(rec => {
+      addEvent(`EIB: Examen Recuperación (Bim ${idx+1})`, rec, "08:00", 480, "Exámenes de recuperación");
+    });
+  });
+
+  const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//EIB UPS//Horario P68//ES\nCALSCALE:GREGORIAN\n${events.join("\n")}\nEND:VCALENDAR`;
+
+  const blob = new Blob([ics], { type: "text/calendar" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `Horario_EIB_P68_${centro}_Nivel${nivel}.ics`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+
+// ── Componentes React ──
+
+// ── Generar tabla plana para Admin ──
+
+function generarTablaAdmin() {
+  const rows = [];
+  Object.entries(DATA.niveles).forEach(([nivelId, nivelData]) => {
+    const centros = DATA.centrosPorNivel[nivelId] || [];
+    nivelData.materias.forEach(mat => {
+      centros.forEach(centro => {
+        const zona = getZona(centro);
+        const bim = mat.bimestre[zona];
+        const docente = getDocente(mat, centro);
+        const enlace = (mat.enlaces && (mat.enlaces[centro] || mat.enlaces["Todos los centros"])) || "";
+        rows.push({
+          nivel: parseInt(nivelId),
+          nivelNombre: nivelData.nombre,
+          centro,
+          bloque: bim === 0 ? "Semestral" : bim === 1 ? "1er Bloque" : "2do Bloque",
+          bloqueNum: bim,
+          asignatura: mat.nombre,
+          asignaturaCorta: mat.corto,
+          docente,
+          dia: mat.dia || "Por confirmar",
+          hora: mat.hora || "Por confirmar",
+          enlace,
+          tipo: mat.tipo
+        });
+      });
+    });
+  });
+  return rows;
+}
+
+function textoWhatsApp(r) {
+  let t = "\u{1F4DA} *" + r.asignaturaCorta + "*\n\u{1F464} " + r.docente;
+  if (r.dia !== "Por confirmar") t += "\n\u{1F550} " + r.dia + " | " + r.hora;
+  else t += "\n\u{1F550} Horario por confirmar";
+  if (r.enlace) t += "\n\u{1F517} " + r.enlace;
+  return t;
+}
+
+function textoSimple(r) {
+  let t = r.asignaturaCorta + " con " + r.docente;
+  if (r.dia !== "Por confirmar") t += " " + r.dia + " | " + r.hora;
+  if (r.enlace) t += " " + r.enlace;
+  return t;
+}
+
+
+// ── Admin Panel ──
+
+function AdminLogin({ onBack, onLogin }) {
+  const [user, setUser] = React.useState("");
+  const [pass, setPass] = React.useState("");
+  const [error, setError] = React.useState(false);
+
+  const UH = "7609390a793d4903facfe42f21af800c06dd28f93725b9a2006b3ca59947890e";
+  const PH = "ef96974ad76e8614868138b69515722ab2afd596dec01cb44f8fa7aeae39720b";
+
+  async function sha256(msg) {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+  }
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const uh = await sha256(user);
+    const ph = await sha256(pass);
+    if (uh === UH && ph === PH) {
+      sessionStorage.setItem("eib_admin", "1");
+      onLogin();
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 3000);
+    }
+  };
+
+  return (
+    <div className="container" style={{maxWidth:420,marginTop:60}}>
+      <div className="card" style={{textAlign:"center"}}>
+        <div style={{fontSize:40,marginBottom:12}}>\u{1F512}</div>
+        <h2 style={{fontSize:"18px",fontWeight:700,marginBottom:4}}>Panel de Administraci\u00f3n</h2>
+        <p style={{fontSize:"13px",color:"#718096",marginBottom:20}}>Ingresa tus credenciales para acceder</p>
+        <form onSubmit={handleLogin}>
+          <input type="text" placeholder="Usuario" value={user} onChange={e => setUser(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:10,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+          <input type="password" placeholder="Contrase\u00f1a" value={pass} onChange={e => setPass(e.target.value)} style={{width:"100%",padding:"10px 14px",border:"1px solid #e2e8f0",borderRadius:8,marginBottom:16,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+          {error && <div style={{color:"#e53e3e",fontSize:13,marginBottom:12}}>Usuario o contrase\u00f1a incorrectos</div>}
+          <button type="submit" style={{width:"100%",padding:"12px",background:"#2d3748",color:"white",border:"none",borderRadius:8,fontSize:14,fontWeight:600,cursor:"pointer",fontFamily:"Inter,sans-serif"}}>Ingresar</button>
+        </form>
+        <button onClick={onBack} style={{marginTop:16,background:"none",border:"none",color:"#718096",fontSize:13,cursor:"pointer",fontFamily:"Inter,sans-serif"}}>\u2190 Volver a vista de estudiante</button>
+      </div>
+    </div>
+  );
+}
+
+function AdminPanel({ onBack }) {
+  const [search, setSearch] = React.useState("");
+  const [filterNivel, setFilterNivel] = React.useState("");
+  const [filterCentro, setFilterCentro] = React.useState("");
+  const [filterBloque, setFilterBloque] = React.useState("");
+  const [copiedId, setCopiedId] = React.useState(null);
+  const [expandedRow, setExpandedRow] = React.useState(null);
+
+  const allRows = React.useMemo(() => generarTablaAdmin(), []);
+
+  const filtered = allRows.filter(r => {
+    if (search) {
+      const s = search.toLowerCase();
+      if (!r.asignatura.toLowerCase().includes(s) && !r.docente.toLowerCase().includes(s) && !r.centro.toLowerCase().includes(s)) return false;
+    }
+    if (filterNivel && r.nivel !== parseInt(filterNivel)) return false;
+    if (filterCentro && r.centro !== filterCentro) return false;
+    if (filterBloque && r.bloque !== filterBloque) return false;
+    return true;
+  });
+
+  const copiar = (texto, id) => {
+    navigator.clipboard.writeText(texto).then(() => {
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000);
+    });
+  };
+
+  const copiarTodosWhatsApp = () => {
+    const textos = filtered.map(r => textoWhatsApp(r)).join("\n\n\u2500\u2500\u2500\u2500\u2500\n\n");
+    copiar(textos, "all");
+  };
+
+  const nivelesUnicos = [...new Set(allRows.map(r => r.nivel))].sort();
+  const centrosUnicos = [...new Set(allRows.map(r => r.centro))];
+
+  return (
+    <div className="admin-container">
+      <div className="admin-header">
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
+          <button className="btn-back" onClick={onBack}>\u2190 Vista estudiante</button>
+          <div>
+            <h1 style={{fontSize:"20px",fontWeight:700}}>Panel de Administraci\u00f3n</h1>
+            <p style={{fontSize:"13px",opacity:0.7}}>EIB en L\u00ednea \u00b7 Per\u00edodo {DATA.periodo}</p>
+          </div>
+          <span className="admin-stat">\u{1F4CB} {filtered.length}/{allRows.length}</span>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="admin-filters">
+          <input type="text" placeholder="\u{1F50D} Buscar asignatura, docente o centro..." value={search} onChange={e => setSearch(e.target.value)} />
+          <select value={filterNivel} onChange={e => setFilterNivel(e.target.value)}>
+            <option value="">Todos los niveles</option>
+            {nivelesUnicos.map(n => <option key={n} value={n}>{n === 9 ? "Plan Contingencia" : n + "\u00b0 Nivel"}</option>)}
+          </select>
+          <select value={filterCentro} onChange={e => setFilterCentro(e.target.value)}>
+            <option value="">Todos los centros</option>
+            {centrosUnicos.map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+          <select value={filterBloque} onChange={e => setFilterBloque(e.target.value)}>
+            <option value="">Todos los bloques</option>
+            <option value="1er Bloque">1er Bloque</option>
+            <option value="2do Bloque">2do Bloque</option>
+            <option value="Semestral">Semestral</option>
+          </select>
+          <button className={`btn-copy ${copiedId === "all" ? "copied" : ""}`} onClick={copiarTodosWhatsApp} style={{padding:"8px 14px"}}>
+            {copiedId === "all" ? "\u2713 Copiados" : "\u{1F4CB} Copiar filtrados"}
+          </button>
+        </div>
+      </div>
+
+      <div className="card" style={{padding:0,overflow:"auto"}}>
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Nivel</th>
+              <th>Centro</th>
+              <th>Bloque</th>
+              <th>Asignatura</th>
+              <th>Docente</th>
+              <th>D\u00eda</th>
+              <th>Hora</th>
+              <th>Enlace</th>
+              <th style={{textAlign:"center"}}>Copiar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((r, i) => {
+              const rowId = `${r.nivel}-${r.centro}-${r.asignaturaCorta}-${i}`;
+              const isExp = expandedRow === rowId;
+              return (
+                <React.Fragment key={i}>
+                  <tr className={isExp ? "highlighted" : ""} style={{cursor:"pointer"}} onClick={() => setExpandedRow(isExp ? null : rowId)}>
+                    <td><span className="badge" style={{background: r.nivel === 9 ? "#fed7d7" : "#bee3f8", color: r.nivel === 9 ? "#9b2c2c" : "#2a4365"}}>{r.nivel === 9 ? "PC" : r.nivel + "\u00b0"}</span></td>
+                    <td style={{fontWeight:500}}>{r.centro}</td>
+                    <td><span className="badge" style={{background: r.bloqueNum === 1 ? "#bee3f8" : r.bloqueNum === 2 ? "#fefcbf" : "#c6f6d5", color: r.bloqueNum === 1 ? "#2a4365" : r.bloqueNum === 2 ? "#744210" : "#22543d"}}>{r.bloque}</span></td>
+                    <td style={{maxWidth:220}}>{r.asignaturaCorta}</td>
+                    <td style={{maxWidth:180}}>{r.docente}</td>
+                    <td style={{color: r.dia === "Por confirmar" ? "#d69e2e" : "inherit", fontWeight: r.dia === "Por confirmar" ? 500 : 400}}>{r.dia}</td>
+                    <td style={{color: r.hora === "Por confirmar" ? "#d69e2e" : "inherit"}}>{r.hora}</td>
+                    <td>{r.enlace ? <a href={r.enlace} target="_blank" rel="noopener" style={{color:"#3182ce",fontSize:"12px"}}>Abrir \u2197</a> : <span style={{color:"#cbd5e0",fontSize:"12px"}}>\u2014</span>}</td>
+                    <td style={{textAlign:"center"}}>
+                      <button className={`btn-copy ${copiedId === rowId ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoSimple(r), rowId); }}>
+                        {copiedId === rowId ? "\u2713" : "\u{1F4CB}"}
+                      </button>
+                    </td>
+                  </tr>
+                  {isExp && (
+                    <tr>
+                      <td colSpan={9} style={{padding:"12px 16px",background:"#f7fafc"}}>
+                        <div style={{display:"flex",gap:16,alignItems:"flex-start",flexWrap:"wrap"}}>
+                          <div>
+                            <div style={{fontSize:"11px",fontWeight:600,color:"#718096",marginBottom:4,textTransform:"uppercase"}}>Vista previa WhatsApp</div>
+                            <div className="whatsapp-preview" style={{whiteSpace:"pre-line"}}>{textoWhatsApp(r)}</div>
+                          </div>
+                          <div style={{display:"flex",flexDirection:"column",gap:6,marginTop:16}}>
+                            <button className={`btn-copy ${copiedId === rowId + "-wa" ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoWhatsApp(r), rowId + "-wa"); }} style={{padding:"8px 16px"}}>
+                              {copiedId === rowId + "-wa" ? "\u2713 Copiado" : "\u{1F4CB} Copiar formato WhatsApp"}
+                            </button>
+                            <button className={`btn-copy ${copiedId === rowId + "-s" ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoSimple(r), rowId + "-s"); }} style={{padding:"8px 16px"}}>
+                              {copiedId === rowId + "-s" ? "\u2713 Copiado" : "\u{1F4CB} Copiar texto simple"}
+                            </button>
+                          </div>
+                        </div>
+                        <div style={{marginTop:8,fontSize:"11px",color:"#a0aec0"}}>Nombre completo: {r.asignatura}</div>
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+        {filtered.length === 0 && <div className="empty-state">No se encontraron resultados.</div>}
+      </div>
+    </div>
+  );
+}
+
+
+// ── App Root (Student + Admin) ──
+
+function AppRoot() {
+  const [mode, setMode] = React.useState("student");
+  const [adminAuth, setAdminAuth] = React.useState(sessionStorage.getItem("eib_admin") === "1");
+
+  if (mode === "admin") {
+    if (adminAuth) {
+      return <AdminPanel onBack={() => setMode("student")} />;
+    }
+    return <AdminLogin onBack={() => setMode("student")} onLogin={() => setAdminAuth(true)} />;
+  }
+  return <StudentView onAdmin={() => setMode("admin")} />;
+}
+
+function StudentView({ onAdmin }) {
+  const [centro, setCentro] = React.useState(null);
+  const [nivel, setNivel] = React.useState(null);
+  const [tab, setTab] = React.useState("horario");
+
+  const nivelesDisponibles = centro
+    ? Object.entries(DATA.centrosPorNivel)
+        .filter(([_, centros]) => centros.includes(centro))
+        .map(([n]) => parseInt(n))
+    : [];
+
+  const handleCentro = (c) => { setCentro(c); setNivel(null); };
+
+  return (
+    <div className="container">
+      <div className="header">
+        <h1 style={{fontSize:"24px",fontWeight:700,marginBottom:4}}>Educaci\u00f3n Intercultural Biling\u00fce</h1>
+        <p style={{fontSize:"16px",opacity:0.9,marginBottom:2}}>Modalidad en L\u00ednea</p>
+        <p style={{fontSize:"14px",opacity:0.7}}>Per\u00edodo {DATA.periodo} \u00b7 {DATA.periodoLabel}</p>
+        <button className="btn-admin-toggle" onClick={onAdmin}>\u2699 Administraci\u00f3n</button>
+      </div>
+
+      <div className="card">
+        <p style={{fontSize:"13px",color:"#718096",marginBottom:8,fontWeight:600,textTransform:"uppercase",letterSpacing:"0.5px"}}>1. Selecciona tu centro de apoyo</p>
+        <div className="selector-grid">
+          {["Latacunga", "Cayambe", "Otavalo", "Riobamba", "Amazon\u00eda Norte", "Wasakentsa"].map(c => (
+            <button key={c} className={`btn ${centro === c ? 'active' : ''}`} onClick={() => handleCentro(c)}>{c}</button>
+          ))}
+        </div>
+        {centro && (
+          <div className="fade-in" style={{marginTop:16}}>
+            <p style={{fontSize:"13px",color:"#718096",marginBottom:8,fontWeight:600,textTransform:"uppercase",letterSpacing:"0.5px"}}>2. Selecciona tu nivel</p>
+            <div className="selector-grid">
+              {nivelesDisponibles.map(n => (
+                <button key={n} className={`btn ${nivel === n ? 'active' : ''}`} onClick={() => setNivel(n)}>
+                  {n === 9 ? "Plan Contingencia (9\u00b0)" : `${n}\u00b0 Nivel`}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {centro && nivel && (
+        <div className="fade-in">
+          <HorarioView centro={centro} nivel={nivel} tab={tab} setTab={setTab} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+// ── Render ──
+ReactDOM.render(<AppRoot />, document.getElementById("root"));
+
+</script>
+</body>
+</html>
