@@ -1100,6 +1100,140 @@ function generarFechasClases(materia, bimNum) {
   return fechas;
 }
 
+// ── Funciones auxiliares Admin ──
+
+function exportarICS(centro, nivel) {
+  generarICS(nivel, centro);
+}
+
+function getCalSubscriptionUrl(centro, nivel) {
+  var nameMap = {
+    "Amazonía Norte": "Amazonia_Norte",
+    "Wasakentsa": "Wasakentsa",
+    "Todos los centros": "Todos_los_centros"
+  };
+  var safeName = nameMap[centro] || centro;
+  return "https://cvasconezp.github.io/horario-eib-p68/cal/" + safeName + "_" + nivel + ".ics";
+}
+
+function generarTablaAdmin() {
+  var rows = [];
+  var niveles = Object.keys(DATA.niveles).map(Number);
+  niveles.forEach(function(nivel) {
+    var info = DATA.niveles[nivel];
+    var centros = DATA.centrosPorNivel[nivel] || [];
+    centros.forEach(function(centro) {
+      var zona = getZona(centro);
+      info.materias.forEach(function(mat) {
+        var bim = mat.bimestre[zona];
+        var bloqueLabel = bim === 0 ? "Semestral" : bim === 1 ? "1er Bloque" : "2do Bloque";
+        var doc = getDocente(mat, centro);
+        var dia = mat.dia || "Por confirmar";
+        var hora = mat.hora || "Por confirmar";
+        rows.push({
+          nivel: nivel,
+          centro: centro,
+          bloque: bloqueLabel,
+          bloqueNum: bim,
+          asignatura: mat.nombre,
+          asignaturaCorta: mat.corto,
+          docente: doc,
+          dia: dia,
+          hora: hora,
+          enlace: (mat.enlaces && mat.enlaces[centro]) || ""
+        });
+      });
+    });
+  });
+  return rows;
+}
+
+function textoWhatsApp(r) {
+  return "*" + r.asignaturaCorta + "*\nNivel: " + (r.nivel === 9 ? "Plan Contingencia" : r.nivel + "\u00B0") + " | Centro: " + r.centro + "\nDocente: " + r.docente + "\nD\u00EDa: " + r.dia + " | Hora: " + r.hora + "\nBloque: " + r.bloque + (r.enlace ? "\nEnlace: " + r.enlace : "");
+}
+
+function textoSimple(r) {
+  return r.asignaturaCorta + " - " + r.docente + " - " + r.dia + " " + r.hora + " (" + r.centro + ", " + (r.nivel === 9 ? "PC" : r.nivel + "\u00B0") + ")";
+}
+
+function detectarCruces() {
+  var cruces = [];
+  // Check online sessions: same docente, same day of week + same time
+  var niveles = Object.keys(DATA.niveles).map(Number);
+  var docenteSlots = {};
+  niveles.forEach(function(nivel) {
+    var info = DATA.niveles[nivel];
+    var centros = DATA.centrosPorNivel[nivel] || [];
+    centros.forEach(function(centro) {
+      info.materias.forEach(function(mat) {
+        if (!mat.dia || !mat.hora) return;
+        var doc = getDocente(mat, centro);
+        if (!doc || doc === "Departamento de Idiomas" || doc === "Por confirmar") return;
+        var key = doc + "|" + mat.dia + "|" + mat.hora;
+        if (!docenteSlots[key]) docenteSlots[key] = [];
+        docenteSlots[key].push({ nivel: nivel, centro: centro, mat: mat.corto, docente: doc, dia: mat.dia, hora: mat.hora });
+      });
+    });
+  });
+  Object.keys(docenteSlots).forEach(function(key) {
+    var slots = docenteSlots[key];
+    if (slots.length > 1) {
+      for (var i = 0; i < slots.length; i++) {
+        for (var j = i + 1; j < slots.length; j++) {
+          var a = slots[i], b = slots[j];
+          if (a.nivel === b.nivel && a.centro === b.centro) continue;
+          cruces.push({
+            tipo: "online",
+            docente: a.docente,
+            dia: a.dia,
+            hora: a.hora,
+            nivelA: a.nivel, centroA: a.centro, matA: a.mat,
+            nivelB: b.nivel, centroB: b.centro, matB: b.mat
+          });
+        }
+      }
+    }
+  });
+  // Check presencial: same docente, same date + overlapping time
+  var presDocSlots = {};
+  Object.keys(DATA.presenciales || {}).forEach(function(niv) {
+    var nivel = parseInt(niv);
+    var centros = DATA.presenciales[niv];
+    Object.keys(centros).forEach(function(centro) {
+      var bims = centros[centro];
+      ["bim1", "bim2"].forEach(function(bk) {
+        (bims[bk] || []).forEach(function(ses) {
+          var doc = ses.doc;
+          if (!doc) return;
+          var key2 = doc + "|" + ses.f + "|" + ses.h;
+          if (!presDocSlots[key2]) presDocSlots[key2] = [];
+          presDocSlots[key2].push({ nivel: nivel, centro: centro, mat: ses.m.substring(0, 40), docente: doc, dia: ses.f, hora: ses.h });
+        });
+      });
+    });
+  });
+  Object.keys(presDocSlots).forEach(function(key) {
+    var slots = presDocSlots[key];
+    if (slots.length > 1) {
+      for (var i = 0; i < slots.length; i++) {
+        for (var j = i + 1; j < slots.length; j++) {
+          var a = slots[i], b = slots[j];
+          if (a.nivel === b.nivel && a.centro === b.centro) continue;
+          cruces.push({
+            tipo: "presencial",
+            docente: a.docente,
+            dia: a.dia,
+            hora: a.hora,
+            nivelA: a.nivel, centroA: a.centro, matA: a.mat,
+            nivelB: b.nivel, centroB: b.centro, matB: b.mat
+          });
+        }
+      }
+    }
+  });
+  return cruces;
+}
+
 function generarICS(nivel, centro) {
   const zona = getZona(centro);
   const materias = DATA.niveles[nivel]?.materias || [];
@@ -1299,25 +1433,45 @@ function HorarioView({ centro, nivel, tab, setTab }) {
     return (
       <div key={"pres-" + bimKey} style={{marginBottom:24}}>
         <h3 style={{fontSize:16, fontWeight:600, marginBottom:12, color:"#2d3748"}}>{bimLabel}</h3>
-        {presData[bimKey].map(ses => (
-          <div key={ses.id} className="schedule-row day-lunes">
-            <div style={{flex:1}}>
-              <div style={{fontWeight:600, fontSize:14}}>{ses.materia}</div>
-              <div style={{fontSize:12, color:"#718096", marginTop:2}}>
-                {ses.docente}
-                {ses.enlace && <span style={{marginLeft:8}}>
-                  <a href={ses.enlace} target="_blank" rel="noopener noreferrer" style={{color:"#3182ce", textDecoration:"none"}}>
-                    Ingresar
-                  </a>
-                </span>}
+        {presData[bimKey].map((ses, idx) => {
+          const isExam = ses.t === "examen";
+          const bgColor = isExam ? "#fff5f5" : "#f7fafc";
+          const borderColor = isExam ? "#e53e3e" : "#4299e1";
+          return (
+            <div key={idx} style={{
+              borderLeft: "4px solid " + borderColor,
+              background: bgColor,
+              padding: "12px 16px",
+              borderRadius: 10,
+              marginBottom: 8
+            }}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:12}}>
+                <div style={{flex:1}}>
+                  <div style={{fontWeight:600, fontSize:14}}>{ses.m}</div>
+                  <div style={{fontSize:12, color:"#718096", marginTop:2}}>
+                    {ses.doc || "Por confirmar"}
+                  </div>
+                </div>
+                <div style={{textAlign:"right", minWidth:120}}>
+                  <div style={{fontSize:13, fontWeight:500}}>{formatFecha(ses.f)}</div>
+                  <div style={{fontSize:12, color:"#718096"}}>{ses.h}</div>
+                  <span style={{
+                    display:"inline-block",
+                    padding:"2px 8px",
+                    borderRadius:12,
+                    fontSize:11,
+                    fontWeight:600,
+                    marginTop:4,
+                    backgroundColor: isExam ? "#fed7d7" : "#bee3f8",
+                    color: isExam ? "#9b2c2c" : "#2a4365"
+                  }}>
+                    {isExam ? "EXAMEN" : "CLASE"}
+                  </span>
+                </div>
               </div>
             </div>
-            <div style={{textAlign:"right", minWidth:120}}>
-              <div style={{fontSize:13, fontWeight:500}}>{ses.dia}</div>
-              <div style={{fontSize:12, color:"#718096"}}>{ses.hora}</div>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   };
@@ -1338,9 +1492,21 @@ function HorarioView({ centro, nivel, tab, setTab }) {
 
       {tab === "horario" && (
         <div style={{animation:"fadeIn 0.3s ease-in"}}>
-          <button className="btn-export" onClick={() => exportarICS(centro, nivel)} style={{marginBottom:16}}>
-            <span>Exportar</span>
-          </button>
+          {(() => {
+            const icsUrl = getCalSubscriptionUrl(centro, nivel);
+            const webcalUrl = icsUrl.replace("https://", "webcal://");
+            const gcalUrl = "https://calendar.google.com/calendar/r?cid=" + encodeURIComponent(webcalUrl);
+            return (
+              <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:16}}>
+                <a href={gcalUrl} target="_blank" rel="noopener noreferrer" className="btn-export" style={{textDecoration:"none",display:"inline-flex",alignItems:"center",gap:8}}>
+                  <span style={{fontSize:16}}>&#128197;</span> Suscribirse en Google Calendar
+                </a>
+                <a href={webcalUrl} className="btn-export" style={{textDecoration:"none",background:"#3182ce",display:"inline-flex",alignItems:"center",gap:8}}>
+                  <span style={{fontSize:16}}>&#128197;</span> Suscribirse (Apple/Outlook)
+                </a>
+              </div>
+            );
+          })()}
           
           {allSessions.length === 0 ? (
             <div className="empty-state">
@@ -1553,8 +1719,10 @@ function AdminPanel({ onBack }) {
   const [filterDia, setFilterDia] = React.useState("");
   const [copiedId, setCopiedId] = React.useState(null);
   const [expandedRow, setExpandedRow] = React.useState(null);
+  const [editingRow, setEditingRow] = React.useState(null);
+  const [refreshKey, setRefreshKey] = React.useState(0);
 
-  const allRows = React.useMemo(() => generarTablaAdmin(), []);
+  const allRows = React.useMemo(() => generarTablaAdmin(), [refreshKey]);
 
   const filtered = allRows.filter(r => {
     if (search) {
@@ -1665,6 +1833,7 @@ function AdminPanel({ onBack }) {
               <th>Hora</th>
               <th>Enlace</th>
               <th style={{textAlign:"center"}}>Copiar</th>
+              <th style={{textAlign:"center"}}>Editar</th>
             </tr>
           </thead>
           <tbody>
@@ -1687,10 +1856,15 @@ function AdminPanel({ onBack }) {
                         {copiedId === rowId ? "✓" : "📋"}
                       </button>
                     </td>
+                    <td style={{textAlign:"center"}}>
+                      <button className="btn-copy" onClick={e => { e.stopPropagation(); setEditingRow(r); }} style={{background:"#ebf8ff",color:"#3182ce"}}>
+                        &#9998;
+                      </button>
+                    </td>
                   </tr>
                   {isExp && (
                     <tr>
-                      <td colSpan={9} style={{padding:"12px 16px",background:"#f7fafc"}}>
+                      <td colSpan={10} style={{padding:"12px 16px",background:"#f7fafc"}}>
                         <div style={{display:"flex",gap:16,alignItems:"flex-start",flexWrap:"wrap"}}>
                           <div>
                             <div style={{fontSize:"11px",fontWeight:600,color:"#718096",marginBottom:4,textTransform:"uppercase"}}>Vista previa WhatsApp</div>
@@ -1716,6 +1890,14 @@ function AdminPanel({ onBack }) {
         </table>
         {filtered.length === 0 && <div className="empty-state">No se encontraron resultados.</div>}
       </div>
+
+      {editingRow && (
+        <AdminEditor
+          row={editingRow}
+          onClose={() => setEditingRow(null)}
+          onSave={() => { setEditingRow(null); setRefreshKey(k => k + 1); }}
+        />
+      )}
     </div>
   );
 }
@@ -1781,6 +1963,7 @@ function StudentView({ onAdmin }) {
 
       {centro && nivel && (
         <div className="fade-in">
+          <NotificationBanner centro={centro} nivel={nivel} />
           <HorarioView centro={centro} nivel={nivel} tab={tab} setTab={setTab} />
         </div>
       )}
@@ -1789,8 +1972,236 @@ function StudentView({ onAdmin }) {
 }
 
 
+// ── Notificaciones ──
+
+function NotificationBanner({ centro, nivel }) {
+  const [permission, setPermission] = React.useState(
+    typeof Notification !== "undefined" ? Notification.permission : "denied"
+  );
+  const [dismissed, setDismissed] = React.useState(false);
+
+  if (typeof Notification === "undefined" || permission === "granted" || permission === "denied" || dismissed) {
+    return null;
+  }
+
+  const requestPerm = () => {
+    Notification.requestPermission().then(p => {
+      setPermission(p);
+      if (p === "granted" && "serviceWorker" in navigator) {
+        navigator.serviceWorker.ready.then(reg => {
+          reg.active && reg.active.postMessage({ type: "SCHEDULE_CHECK" });
+        });
+      }
+    });
+  };
+
+  return (
+    <div style={{background:"#ebf8ff",border:"1px solid #90cdf4",borderRadius:10,padding:"12px 16px",marginBottom:16,display:"flex",alignItems:"center",gap:12,fontSize:13}}>
+      <span style={{fontSize:20}}>&#128276;</span>
+      <div style={{flex:1}}>
+        <strong>Recibe recordatorios</strong>
+        <div style={{color:"#4a5568",marginTop:2}}>Te avisamos antes de cada clase virtual y encuentro presencial</div>
+      </div>
+      <button onClick={requestPerm} style={{background:"#3182ce",color:"white",border:"none",padding:"8px 16px",borderRadius:8,cursor:"pointer",fontWeight:600,fontSize:13,fontFamily:"Inter,sans-serif"}}>Activar</button>
+      <button onClick={() => setDismissed(true)} style={{background:"none",border:"none",color:"#a0aec0",cursor:"pointer",fontSize:18,padding:4}}>&#10005;</button>
+    </div>
+  );
+}
+
+// ── Admin Editor Modal ──
+
+function AdminEditor({ row, onClose, onSave }) {
+  const [docente, setDocente] = React.useState(row.docente);
+  const [enlace, setEnlace] = React.useState(row.enlace || "");
+  const [dia, setDia] = React.useState(row.dia);
+  const [hora, setHora] = React.useState(row.hora);
+  const [saving, setSaving] = React.useState(false);
+  const [msg, setMsg] = React.useState("");
+
+  const handleSave = async () => {
+    setSaving(true);
+    setMsg("");
+    try {
+      // Update DATA in memory
+      var nivel = row.nivel;
+      var centro = row.centro;
+      var mats = DATA.niveles[nivel]?.materias || [];
+      var mat = mats.find(m => m.nombre === row.asignatura || m.corto === row.asignaturaCorta);
+      if (mat) {
+        mat.docentes[centro] = docente;
+        if (!mat.enlaces) mat.enlaces = {};
+        mat.enlaces[centro] = enlace;
+        if (dia !== "Por confirmar") mat.dia = dia;
+        if (hora !== "Por confirmar") mat.hora = hora;
+      }
+      setMsg("Guardado en memoria. Para persistir, usa 'Publicar cambios'.");
+      if (onSave) onSave();
+    } catch(e) {
+      setMsg("Error: " + e.message);
+    }
+    setSaving(false);
+  };
+
+  return (
+    <div style={{position:"fixed",top:0,left:0,right:0,bottom:0,background:"rgba(0,0,0,0.5)",zIndex:1000,display:"flex",alignItems:"center",justifyContent:"center",padding:20}} onClick={onClose}>
+      <div className="card" style={{maxWidth:500,width:"100%",maxHeight:"80vh",overflow:"auto"}} onClick={e => e.stopPropagation()}>
+        <h3 style={{fontSize:16,fontWeight:700,marginBottom:16}}>Editar: {row.asignaturaCorta}</h3>
+        <p style={{fontSize:12,color:"#718096",marginBottom:12}}>{row.nivel}&#176; Nivel - {row.centro}</p>
+
+        <div style={{marginBottom:12}}>
+          <label style={{fontSize:12,fontWeight:600,color:"#4a5568",display:"block",marginBottom:4}}>Docente</label>
+          <input type="text" value={docente} onChange={e => setDocente(e.target.value)} style={{width:"100%",padding:"8px 12px",border:"1px solid #e2e8f0",borderRadius:8,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+        </div>
+
+        <div style={{marginBottom:12}}>
+          <label style={{fontSize:12,fontWeight:600,color:"#4a5568",display:"block",marginBottom:4}}>Enlace Zoom</label>
+          <input type="text" value={enlace} onChange={e => setEnlace(e.target.value)} placeholder="https://..." style={{width:"100%",padding:"8px 12px",border:"1px solid #e2e8f0",borderRadius:8,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+        </div>
+
+        <div style={{display:"flex",gap:12,marginBottom:12}}>
+          <div style={{flex:1}}>
+            <label style={{fontSize:12,fontWeight:600,color:"#4a5568",display:"block",marginBottom:4}}>D&#237;a</label>
+            <select value={dia} onChange={e => setDia(e.target.value)} style={{width:"100%",padding:"8px 12px",border:"1px solid #e2e8f0",borderRadius:8,fontSize:14,fontFamily:"Inter,sans-serif"}}>
+              <option value="Lunes">Lunes</option>
+              <option value="Martes">Martes</option>
+              <option value="Mi&#233;rcoles">Mi&#233;rcoles</option>
+              <option value="Jueves">Jueves</option>
+              <option value="Viernes">Viernes</option>
+              <option value="Mi&#233;rcoles y Viernes">Mi&#233;rcoles y Viernes</option>
+              <option value="Por confirmar">Por confirmar</option>
+            </select>
+          </div>
+          <div style={{flex:1}}>
+            <label style={{fontSize:12,fontWeight:600,color:"#4a5568",display:"block",marginBottom:4}}>Hora</label>
+            <input type="text" value={hora} onChange={e => setHora(e.target.value)} placeholder="17:00" style={{width:"100%",padding:"8px 12px",border:"1px solid #e2e8f0",borderRadius:8,fontSize:14,fontFamily:"Inter,sans-serif"}} />
+          </div>
+        </div>
+
+        {msg && <div style={{fontSize:12,color:msg.includes("Error") ? "#e53e3e" : "#38a169",marginBottom:12,padding:"8px 12px",background:msg.includes("Error") ? "#fff5f5" : "#f0fff4",borderRadius:8}}>{msg}</div>}
+
+        <div style={{display:"flex",gap:8,justifyContent:"flex-end"}}>
+          <button onClick={onClose} style={{padding:"8px 16px",border:"1px solid #e2e8f0",borderRadius:8,background:"white",cursor:"pointer",fontSize:13,fontFamily:"Inter,sans-serif"}}>Cancelar</button>
+          <button onClick={handleSave} disabled={saving} style={{padding:"8px 16px",border:"none",borderRadius:8,background:"#3182ce",color:"white",cursor:"pointer",fontSize:13,fontWeight:600,fontFamily:"Inter,sans-serif",opacity:saving?0.6:1}}>
+            {saving ? "Guardando..." : "Guardar"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 // ── Render ──
 ReactDOM.render(<AppRoot />, document.getElementById("root"));
+
+// ── Service Worker para notificaciones ──
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    // Register inline service worker via blob
+    var swCode = `
+      var SCHEDULE_DATA = null;
+
+      self.addEventListener("install", function(e) { self.skipWaiting(); });
+      self.addEventListener("activate", function(e) { e.waitUntil(self.clients.matchAll().then(function(clients) { clients.forEach(function(c) { c.postMessage({type:"SW_READY"}); }); })); });
+
+      self.addEventListener("message", function(e) {
+        if (e.data && e.data.type === "SCHEDULE_DATA") {
+          SCHEDULE_DATA = e.data.sessions;
+          scheduleChecks();
+        }
+        if (e.data && e.data.type === "SCHEDULE_CHECK") {
+          checkUpcoming();
+        }
+      });
+
+      function scheduleChecks() {
+        // Check every 60 seconds
+        setInterval(checkUpcoming, 60000);
+        checkUpcoming();
+      }
+
+      function checkUpcoming() {
+        if (!SCHEDULE_DATA || SCHEDULE_DATA.length === 0) return;
+        var now = new Date();
+        SCHEDULE_DATA.forEach(function(ses) {
+          var sesTime = new Date(ses.datetime);
+          var diffMs = sesTime - now;
+          var diffMin = diffMs / 60000;
+
+          // 10 min before virtual class
+          if (ses.virtual && diffMin > 9 && diffMin <= 10.5) {
+            self.registration.showNotification("EIB - Clase en 10 min", {
+              body: ses.materia + " a las " + ses.hora,
+              icon: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%231a365d" width="100" height="100" rx="20"/><text x="50" y="65" text-anchor="middle" fill="white" font-size="50" font-family="sans-serif">EIB</text></svg>'),
+              tag: "eib-" + ses.datetime,
+              requireInteraction: true
+            });
+          }
+          // 5 min before virtual class
+          if (ses.virtual && diffMin > 4 && diffMin <= 5.5) {
+            self.registration.showNotification("EIB - Clase en 5 min!", {
+              body: ses.materia + " a las " + ses.hora + " - Ya casi inicia!",
+              icon: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23c53030" width="100" height="100" rx="20"/><text x="50" y="65" text-anchor="middle" fill="white" font-size="50" font-family="sans-serif">EIB</text></svg>'),
+              tag: "eib-5-" + ses.datetime,
+              requireInteraction: true
+            });
+          }
+        });
+      }
+
+      self.addEventListener("notificationclick", function(e) {
+        e.notification.close();
+        e.waitUntil(
+          self.clients.matchAll({type:"window"}).then(function(clients) {
+            if (clients.length > 0) { clients[0].focus(); }
+            else { self.clients.openWindow("https://cvasconezp.github.io/horario-eib-p68/"); }
+          })
+        );
+      });
+    `;
+
+    var blob = new Blob([swCode], {type: "application/javascript"});
+    var swUrl = URL.createObjectURL(blob);
+
+    navigator.serviceWorker.register(swUrl, {scope: "/"}).then(function(reg) {
+      console.log("SW registered");
+
+      // Send schedule data to SW
+      function sendScheduleToSW() {
+        var sessions = [];
+        var niveles = [2,4,6,8];
+        niveles.forEach(function(nivel) {
+          var sesiones = DATA.sesionesEnLinea[nivel] || [];
+          sesiones.forEach(function(subj) {
+            subj.s.forEach(function(ses) {
+              sessions.push({
+                materia: subj.m,
+                hora: ses.h,
+                datetime: ses.f + "T" + ses.h + ":00",
+                virtual: true
+              });
+            });
+          });
+        });
+        if (reg.active) {
+          reg.active.postMessage({type: "SCHEDULE_DATA", sessions: sessions});
+        }
+      }
+
+      if (reg.active) {
+        sendScheduleToSW();
+      }
+      reg.addEventListener("updatefound", function() {
+        var newW = reg.installing;
+        newW.addEventListener("statechange", function() {
+          if (newW.state === "activated") { sendScheduleToSW(); }
+        });
+      });
+    }).catch(function(err) {
+      console.log("SW registration failed (expected on some hosts):", err.message);
+    });
+  });
+}
 
 </script>
 </body>
