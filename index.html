@@ -1233,32 +1233,33 @@ function HorarioView({ centro, nivel, tab, setTab }) {
   // Helper to group sessions by week
   const groupByWeek = (sessions) => {
     const weeks = {};
-    const startOfBim = new Date('2026-04-06');
-    
+    const startOfBim = new Date('2026-04-06T00:00:00Z');
+
     sessions.forEach(ses => {
       const sesDate = new Date(ses.fecha + 'T00:00:00Z');
       const daysFromStart = Math.floor((sesDate - startOfBim) / (1000 * 60 * 60 * 24));
       const weekNum = Math.floor(daysFromStart / 7);
-      
-      let label = '';
-      if (weekNum === 0) {
-        label = 'Esta semana';
-      } else if (weekNum === 1) {
-        label = 'Próxima semana';
-      } else {
-        const weekStart = new Date(startOfBim);
-        weekStart.setUTCDate(weekStart.getUTCDate() + (weekNum * 7));
-        const day = weekStart.getUTCDate();
-        const monthName = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'][weekStart.getUTCMonth()];
-        label = `Semana del ${day} de ${monthName}`;
+
+      const weekStart = new Date(startOfBim);
+      weekStart.setUTCDate(weekStart.getUTCDate() + (weekNum * 7));
+      const day = weekStart.getUTCDate();
+      const monthName = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'][weekStart.getUTCMonth()];
+      const label = `Semana del ${day} de ${monthName}`;
+
+      // Use sortable key (weekNum padded) + display label
+      const sortKey = String(weekNum).padStart(3, '0') + '|' + label;
+
+      if (!weeks[sortKey]) {
+        weeks[sortKey] = [];
       }
-      
-      if (!weeks[label]) {
-        weeks[label] = [];
-      }
-      weeks[label].push(ses);
+      weeks[sortKey].push(ses);
     });
-    
+
+    // Sort sessions within each week by date then time
+    Object.values(weeks).forEach(arr => {
+      arr.sort((a, b) => a.fecha.localeCompare(b.fecha) || a.hora.localeCompare(b.hora));
+    });
+
     return weeks;
   };
 
@@ -1350,16 +1351,16 @@ function HorarioView({ centro, nivel, tab, setTab }) {
               {/* Render grouped by week */}
               {(() => {
                 const grouped = groupByWeek(allSessions);
-                const weekOrder = ['Esta semana', 'Próxima semana'];
-                const otherWeeks = Object.keys(grouped).filter(w => !weekOrder.includes(w)).sort();
-                const orderedWeeks = [...weekOrder.filter(w => grouped[w]), ...otherWeeks];
-                
-                return orderedWeeks.map(weekLabel => (
-                  <div key={weekLabel} style={{marginBottom:24}}>
+                const orderedWeeks = Object.keys(grouped).sort();
+
+                return orderedWeeks.map(sortKey => {
+                  const weekLabel = sortKey.split('|')[1] || sortKey;
+                  return (
+                  <div key={sortKey} style={{marginBottom:24}}>
                     <h3 style={{fontSize:16, fontWeight:600, marginBottom:12, color:"#2d3748", paddingLeft:4}}>
                       {weekLabel}
                     </h3>
-                    {grouped[weekLabel].map((ses, idx) => {
+                    {grouped[sortKey].map((ses, idx) => {
                       const isPast = ses.fechaObj < new Date();
                       const isNext = proxima && ses.fecha === proxima.fecha && ses.hora === proxima.hora;
                       const opacity = isPast ? 0.5 : 1;
@@ -1424,7 +1425,8 @@ function HorarioView({ centro, nivel, tab, setTab }) {
                       );
                     })}
                   </div>
-                ));
+                  );
+                });
               })()}
               
               {/* 2do bimestre notice */}
