@@ -641,10 +641,10 @@ function generarTablaAdmin() {
 }
 
 function textoWhatsApp(r) {
-  let t = "\u{1F4DA} *" + r.asignaturaCorta + "*\n\u{1F464} " + r.docente;
-  if (r.dia !== "Por confirmar") t += "\n\u{1F550} " + r.dia + " | " + r.hora;
-  else t += "\n\u{1F550} Horario por confirmar";
-  if (r.enlace) t += "\n\u{1F517} " + r.enlace;
+  let t = "📚 *" + r.asignaturaCorta + "*\n👤 " + r.docente;
+  if (r.dia !== "Por confirmar") t += "\n🕐 " + r.dia + " | " + r.hora;
+  else t += "\n🕐 Horario por confirmar";
+  if (r.enlace) t += "\n🔗 " + r.enlace;
   return t;
 }
 
@@ -687,7 +687,7 @@ function AdminLogin({ onBack, onLogin }) {
   return (
     <div className="container" style={{maxWidth:420,marginTop:60}}>
       <div className="card" style={{textAlign:"center"}}>
-        <div style={{fontSize:40,marginBottom:12}}>\u{1F512}</div>
+        <div style={{fontSize:40,marginBottom:12}}>🔒</div>
         <h2 style={{fontSize:"18px",fontWeight:700,marginBottom:4}}>Panel de Administraci\u00f3n</h2>
         <p style={{fontSize:"13px",color:"#718096",marginBottom:20}}>Ingresa tus credenciales para acceder</p>
         <form onSubmit={handleLogin}>
@@ -747,13 +747,13 @@ function AdminPanel({ onBack }) {
             <h1 style={{fontSize:"20px",fontWeight:700}}>Panel de Administraci\u00f3n</h1>
             <p style={{fontSize:"13px",opacity:0.7}}>EIB en L\u00ednea \u00b7 Per\u00edodo {DATA.periodo}</p>
           </div>
-          <span className="admin-stat">\u{1F4CB} {filtered.length}/{allRows.length}</span>
+          <span className="admin-stat">📋 {filtered.length}/{allRows.length}</span>
         </div>
       </div>
 
       <div className="card">
         <div className="admin-filters">
-          <input type="text" placeholder="\u{1F50D} Buscar asignatura, docente o centro..." value={search} onChange={e => setSearch(e.target.value)} />
+          <input type="text" placeholder="🔍 Buscar asignatura, docente o centro..." value={search} onChange={e => setSearch(e.target.value)} />
           <select value={filterNivel} onChange={e => setFilterNivel(e.target.value)}>
             <option value="">Todos los niveles</option>
             {nivelesUnicos.map(n => <option key={n} value={n}>{n === 9 ? "Plan Contingencia" : n + "\u00b0 Nivel"}</option>)}
@@ -769,7 +769,7 @@ function AdminPanel({ onBack }) {
             <option value="Semestral">Semestral</option>
           </select>
           <button className={`btn-copy ${copiedId === "all" ? "copied" : ""}`} onClick={copiarTodosWhatsApp} style={{padding:"8px 14px"}}>
-            {copiedId === "all" ? "\u2713 Copiados" : "\u{1F4CB} Copiar filtrados"}
+            {copiedId === "all" ? "\u2713 Copiados" : "📋 Copiar filtrados"}
           </button>
         </div>
       </div>
@@ -806,7 +806,7 @@ function AdminPanel({ onBack }) {
                     <td>{r.enlace ? <a href={r.enlace} target="_blank" rel="noopener" style={{color:"#3182ce",fontSize:"12px"}}>Abrir \u2197</a> : <span style={{color:"#cbd5e0",fontSize:"12px"}}>\u2014</span>}</td>
                     <td style={{textAlign:"center"}}>
                       <button className={`btn-copy ${copiedId === rowId ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoSimple(r), rowId); }}>
-                        {copiedId === rowId ? "\u2713" : "\u{1F4CB}"}
+                        {copiedId === rowId ? "\u2713" : "📋"}
                       </button>
                     </td>
                   </tr>
@@ -820,10 +820,10 @@ function AdminPanel({ onBack }) {
                           </div>
                           <div style={{display:"flex",flexDirection:"column",gap:6,marginTop:16}}>
                             <button className={`btn-copy ${copiedId === rowId + "-wa" ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoWhatsApp(r), rowId + "-wa"); }} style={{padding:"8px 16px"}}>
-                              {copiedId === rowId + "-wa" ? "\u2713 Copiado" : "\u{1F4CB} Copiar formato WhatsApp"}
+                              {copiedId === rowId + "-wa" ? "\u2713 Copiado" : "📋 Copiar formato WhatsApp"}
                             </button>
                             <button className={`btn-copy ${copiedId === rowId + "-s" ? "copied" : ""}`} onClick={e => { e.stopPropagation(); copiar(textoSimple(r), rowId + "-s"); }} style={{padding:"8px 16px"}}>
-                              {copiedId === rowId + "-s" ? "\u2713 Copiado" : "\u{1F4CB} Copiar texto simple"}
+                              {copiedId === rowId + "-s" ? "\u2713 Copiado" : "📋 Copiar texto simple"}
                             </button>
                           </div>
                         </div>
